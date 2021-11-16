@@ -1,0 +1,56 @@
+/***Copyright***/
+.copyrightContainer {
+	justify-content: space-between;
+}
+
+.copyright {
+	width: 70%;
+}
+
+.fontName,
+.fontSize {
+	width: 50%;
+	padding: 0 10px;
+}
+
+.fontSelect {
+	cursor: inherit;
+	appearance: none;
+	width: 100%;
+	padding: 10px;
+	background-color: var(--dark-blue-color);
+	border: #3b4253 1px solid;
+	color: white;
+}
+
+.credit {
+	padding: 10px;
+}
+
+.credit input {
+	cursor: inherit;
+	width: calc(100% - 20px);
+	padding: 10px;
+	background-color: var(--dark-blue-color);
+	border: #3b4253 1px solid;
+	color: white;
+}
+
+.merriweather {
+	font-family: "Merriweather", serif;
+}
+.monserrat {
+	font-family: "Montserrat", sans-serif;
+}
+.oldStandardTT {
+	font-family: "Old Standard TT", serif;
+}
+.openSans {
+	font-family: "Open Sans", sans-serif;
+}
+.playfairDisplay {
+	font-family: "Playfair Display", serif;
+}
+.roboto {
+	font-family: "Roboto", sans-serif;
+}

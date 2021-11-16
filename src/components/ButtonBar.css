@@ -1,0 +1,34 @@
+/****ButtonBar****/
+.buttonBar {
+	justify-content: right;
+	padding: 0 40px;
+	margin-top: 64px;
+}
+.deleteBtn,
+.cancelBtn,
+.saveBtn {
+	border-radius: 6px;
+	margin: 5px;
+	padding: 8px 15px;
+}
+
+.deleteBtn {
+	background-color: transparent;
+	color: #66686d;
+	border: transparent 1px solid;
+}
+.cancelBtn {
+	background-color: transparent;
+	color: #b4b7bd;
+	border: #b4b7bd 1px solid;
+}
+.saveBtn {
+	background-color: var(--red-color);
+	color: white;
+	border: none;
+}
+.deleteBtn:hover,
+.cancelBtn:hover,
+.saveBtn:hover {
+	cursor: pointer;
+}

@@ -1,0 +1,17 @@
+/****ButtonBar****/
+.buttonBar2 {
+	justify-content: right;
+	margin-top: 64px;
+}
+.addBtn {
+	border-radius: 6px;
+	margin: 5px;
+	padding: 8px 15px;
+	background-color: var(--red-color);
+	color: white;
+	border: none;
+}
+
+.addBtn:hover {
+	cursor: pointer;
+}
