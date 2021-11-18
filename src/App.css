@@ -33,6 +33,7 @@ a {
 	overflow: hidden;
 	width: 100%;
 	height: 64px;
+	padding: 0 10px;
 	/* font-size: 26px;
 	font-weight: bolder; */
 	/* color: var(--red-color); */
@@ -40,8 +41,23 @@ a {
 	z-index: 10;
 }
 
+.navContainer {
+	padding: 10px;
+	width: 20%;
+}
+.navContainer a {
+	padding: 10px;
+}
+
+.logoContainer {
+	padding: 10px;
+	margin: auto;
+	margin-left: calc(20% + 20px);
+}
+
 .logoContainer img {
 	height: 30px;
+	margin: auto;
 }
 
 /***bodyContainer***/
@@ -195,16 +211,48 @@ h2 {
 }
 
 .ev1 {
-	background-color: violet;
+	/* background-color: violet; */
+	background-image: linear-gradient(
+		to right top,
+		#756af0,
+		#7f74f1,
+		#897ff3,
+		#9389f4,
+		#9c93f5
+	);
 }
 .ev2 {
-	background-color: var(--red-color);
+	/* background-color: var(--red-color); */
+	background-image: linear-gradient(
+		to right top,
+		#ea5455,
+		#ec6060,
+		#ee6b6c,
+		#ef7677,
+		#f08182
+	);
 }
 .ev3 {
-	background-color: orange;
+	/* background-color: orange; */
+	background-image: linear-gradient(
+		to right top,
+		#ff932c,
+		#ff9d40,
+		#ffa652,
+		#ffaf64,
+		#ffb875
+	);
 }
 .ev4 {
-	background-color: rgb(50, 218, 50);
+	/* background-color: rgb(50, 218, 50); */
+	background-image: linear-gradient(
+		to right top,
+		#2ac871,
+		#32cc77,
+		#3ad17d,
+		#41d583,
+		#48da89
+	);
 }
 
 .eventRow {

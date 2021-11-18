@@ -15,12 +15,19 @@
 
 .fontSelect {
 	cursor: inherit;
-	appearance: none;
 	width: 100%;
 	padding: 10px;
 	background-color: var(--dark-blue-color);
 	border: #3b4253 1px solid;
 	color: white;
+	border-radius: 0.5em;
+}
+
+.fontName select {
+	min-width: 140px;
+}
+.fontSize select {
+	min-width: 50px;
 }
 
 .credit {
@@ -30,6 +37,7 @@
 .credit input {
 	cursor: inherit;
 	width: calc(100% - 20px);
+	height: 26px;
 	padding: 10px;
 	background-color: var(--dark-blue-color);
 	border: #3b4253 1px solid;

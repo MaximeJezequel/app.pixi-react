@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom"
 import ButtonBar2 from "../components/ButtonBar2"
 
 import "../App.css"
@@ -14,7 +13,6 @@ const DashBoard = () => {
 		<div className="App">
 			<div className="bodyContainer flex col">
 				<ButtonBar2 />
-				<NavLink to={"/events"}>Manage Events</NavLink>
 
 				<h2>RECENT EVENTS</h2>
 				<div className="topDiv flex row">
@@ -28,6 +26,8 @@ const DashBoard = () => {
 				<h2>ALL EVENTS</h2>
 				<div className="bottomDiv flex col">
 					<div className="eventTable">
+						<div>Search bars</div>
+						<br></br>
 						<div className="eventRow">Event</div>
 						<div className="eventRow">Event</div>
 						<div className="eventRow">Event</div>
