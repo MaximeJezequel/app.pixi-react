@@ -9,6 +9,7 @@
 	border: #3b4253 1px solid;
 	background-color: var(--dark-blue-color);
 	color: white;
+	border-radius: 0.5em;
 }
 
 .hostPort {

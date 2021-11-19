@@ -3,6 +3,9 @@
 .teamContainer {
 	padding-top: 12px;
 }
+.inputTeam {
+	border-radius: 0.5em;
+}
 
 .teamTable {
 	border-top: 1px solid #3b4253;

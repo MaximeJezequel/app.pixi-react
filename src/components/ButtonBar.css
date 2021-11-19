@@ -32,3 +32,10 @@
 .saveBtn:hover {
 	cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+	.buttonBar {
+		bottom: 0;
+		justify-content: center;
+	}
+}

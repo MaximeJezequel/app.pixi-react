@@ -22,6 +22,9 @@ function ManageEvents() {
 	const [toggleSwitch4, setToggleSwitch4] = useState(true) //FTP
 	const [toggleSwitch5, setToggleSwitch5] = useState(false) //team
 
+	const [slider1, setSlider1] = useState(100) //percent
+	const [slider2, setSlider2] = useState(100) //percent
+
 	return (
 		<div className="App">
 			<div className="bodyContainer flex col">
@@ -48,23 +51,43 @@ function ManageEvents() {
 									setBubbleValue={setBubbleGridWatermark}
 								/>
 							</div>
+
 							<div className="watermarkSliders flex col">
 								<div className="slider1 flex col">
 									<p>Size of the watermark (%)</p>
-									<div className="sliderBar"></div>
 									<div className="sliderContainer">
 										<input
+											className="sliderRange flex aic jcc"
 											type="range"
-											min="1"
+											min="0"
 											max="100"
-											value="32"
+											value={slider1}
+											onChange={(e) => setSlider1(e.target.value)}
+										/>
+										<input
+											type="range"
+											min="0"
+											max="100"
 											className="sliderCircle"
 										/>
+										<div className="boxSize flex aic jcc">{slider1}</div>
 									</div>
-								</div>
-								<div className="slider2 flex col">
-									<p>Space with the edge of the image (%)</p>
-									<div className="sliderBar"></div>
+
+									<div className="slider2 flex col">
+										<p>Space with the edge of the image (%)</p>
+										<div className="sliderContainer">
+											<input
+												className="sliderRange flex aic jcc"
+												type="range"
+												min="0"
+												max="4"
+												value={slider2}
+												onChange={(e) => setSlider2(e.target.value)}
+											/>
+											<div className="sliderRedBar"></div>
+											<div className="boxSize flex aic jcc">{slider2}</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
