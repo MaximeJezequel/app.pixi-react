@@ -15,9 +15,9 @@ const OptionBlock3 = ({ toggle, setToggle }) => {
 			<div className="optionTitle flex row aic">
 				<p>3. Auto enhancement</p>
 
-				<ToggleSwitch toggle={toggle} setToggle={setToggle} />
+				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
-			<div className="enhancement">
+			<div className="enhancementContainer">
 				<ToggleParam
 					text="Automatic exposure"
 					toggle={autoExpo}

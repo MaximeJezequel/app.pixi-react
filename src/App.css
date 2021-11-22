@@ -73,6 +73,12 @@ h2 {
 }
 
 /**** New event (top div) ****/
+
+.copyrightContainer,
+.folderContainer,
+.enhancementContainer {
+	padding-top: 12px;
+}
 .topDiv {
 	justify-content: space-between;
 }
@@ -113,9 +119,9 @@ h2 {
 .watermarkPosition {
 	justify-content: space-between;
 }
-.watermarkGrid {
+/* .watermarkGrid {
 	width: 30%;
-}
+} */
 .watermarkSliders,
 .copyrightElts {
 	width: 70%;
@@ -287,6 +293,9 @@ h2 {
 /***MEDIA QUERIES***/
 
 @media screen and (max-width: 1200px) {
+	.bodyContainer {
+		padding: 0;
+	}
 	.bottomDiv {
 		height: 100%;
 		padding-bottom: 10px;

@@ -27,7 +27,7 @@ const OptionBlock4 = ({ toggle, setToggle }) => {
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
 				<p>4. FTP transfer</p>
-				<ToggleSwitch toggle={toggle} setToggle={setToggle} />
+				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
 
 			<div className="ftpContainer flex col">

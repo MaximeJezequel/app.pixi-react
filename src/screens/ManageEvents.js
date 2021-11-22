@@ -1,4 +1,4 @@
-// import React from "react"
+import React from "react"
 import { useState } from "react"
 
 import BubbleGrid from "../components/BubbleGrid"
@@ -15,15 +15,10 @@ import image from "../assets/modele.jpg"
 
 function ManageEvents() {
 	const [bubbleGridWatermark, setBubbleGridWatermark] = useState("3-3")
-	const [bubbleGridCopyright, setBubbleGridCopyright] = useState("3-1")
-	const [toggleSwitch1, setToggleSwitch1] = useState(false) //copyright
-	const [toggleSwitch2, setToggleSwitch2] = useState(true) //folders
-	const [toggleSwitch3, setToggleSwitch3] = useState(false) //auto-enhancement
-	const [toggleSwitch4, setToggleSwitch4] = useState(true) //FTP
-	const [toggleSwitch5, setToggleSwitch5] = useState(false) //team
-
 	const [slider1, setSlider1] = useState(100) //percent
-	const [slider2, setSlider2] = useState(100) //percent
+	const [slider2, setSlider2] = useState(4) //percent
+	const [bubbleGridCopyright, setBubbleGridCopyright] = useState("3-1")
+	const [showCopyright, setShowCopyright] = useState(true)
 
 	return (
 		<div className="App">
@@ -44,7 +39,7 @@ function ManageEvents() {
 						<p className="below">Allowed file types: png, jpg, jpeg.</p>
 
 						<div className="watermarkPosition flex row">
-							<div className="watermarkGrid flex col">
+							<div className="position flex col">
 								<p>Position</p>
 								<BubbleGrid
 									bubbleValue={bubbleGridWatermark}
@@ -64,12 +59,7 @@ function ManageEvents() {
 											value={slider1}
 											onChange={(e) => setSlider1(e.target.value)}
 										/>
-										<input
-											type="range"
-											min="0"
-											max="100"
-											className="sliderCircle"
-										/>
+
 										<div className="boxSize flex aic jcc">{slider1}</div>
 									</div>
 
@@ -84,7 +74,7 @@ function ManageEvents() {
 												value={slider2}
 												onChange={(e) => setSlider2(e.target.value)}
 											/>
-											<div className="sliderRedBar"></div>
+
 											<div className="boxSize flex aic jcc">{slider2}</div>
 										</div>
 									</div>
@@ -99,15 +89,15 @@ function ManageEvents() {
 				<h2>OPTIONS</h2>
 				<div className="bottomDiv flex col">
 					<OptionBlock1
-						toggle={toggleSwitch1}
-						setToggle={setToggleSwitch1}
+						toggle={showCopyright}
+						setToggle={setShowCopyright}
 						bubbleValue={bubbleGridCopyright}
 						setBubbleValue={setBubbleGridCopyright}
 					/>
-					<OptionBlock2 toggle={toggleSwitch2} setToggle={setToggleSwitch2} />
-					<OptionBlock3 toggle={toggleSwitch3} setToggle={setToggleSwitch3} />
-					<OptionBlock4 toggle={toggleSwitch4} setToggle={setToggleSwitch4} />
-					<OptionBlock5 toggle={toggleSwitch5} setToggle={setToggleSwitch5} />
+					<OptionBlock2 />
+					<OptionBlock3 />
+					<OptionBlock4 />
+					<OptionBlock5 />
 				</div>
 			</div>
 		</div>

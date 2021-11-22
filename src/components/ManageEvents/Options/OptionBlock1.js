@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import ToggleSwitch from "../../ToggleSwitch"
+import ToggleParam from "../../ToggleParam"
 import BubbleGrid from "../../BubbleGrid"
 
 import "./OptionBlock1.css"
@@ -30,56 +30,65 @@ const OptionBlock1 = ({ toggle, setToggle, bubbleValue, setBubbleValue }) => {
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
 				<p>1. Photographer's copyright</p>
-				<ToggleSwitch toggle={toggle} setToggle={setToggle} />
+				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
 
-			<div className="copyrightContainer flex row">
-				<div className="position">
-					<p>Position</p>
-					<BubbleGrid
-						bubbleValue={bubbleValue}
-						setBubbleValue={setBubbleValue}
-					/>
-				</div>
-				<div className="copyright">
-					<div className="font flex row">
-						<div className="fontName">
-							<p>Font</p>
-							<select
-								className="fontSelect"
-								value={fontFamily}
-								onChange={(e) => handleChangeFontFamily(e)}
-							>
-								{fonts.map((font, index) => (
-									<option key={index} value={font.css}>
-										{font.name}
-									</option>
-								))}
-							</select>
-						</div>
-						<div className="fontSize">
-							<p>Size</p>
-							<select
-								className="fontSelect"
-								value={fontSize}
-								onChange={(e) => handleChangeFontSize(e)}
-							>
-								{fontSizes.map((fontSize, index) => (
-									<option key={index} value={fontSize}>
-										{fontSize}
-									</option>
-								))}
-							</select>
-						</div>
-					</div>
-					<div className="credit">
-						<p>Credit</p>
-						<input
-							className={`${fontFamily}`}
-							style={{ fontSize: `${fontSize}px` }}
-							type="text"
-							placeholder="&copy; John Doe"
+			<div className="copyrightContainer flex col">
+				<ToggleParam
+					text="Show watermark"
+					toggle={toggle}
+					setToggle={setToggle}
+				/>
+
+				<div className="flex row">
+					<div className="position">
+						<p>Position</p>
+						<BubbleGrid
+							bubbleValue={bubbleValue}
+							setBubbleValue={setBubbleValue}
 						/>
+					</div>
+
+					<div className="copyright">
+						<div className="font flex row">
+							<div className="fontName">
+								<p>Font</p>
+								<select
+									className="fontSelect"
+									value={fontFamily}
+									onChange={(e) => handleChangeFontFamily(e)}
+								>
+									{fonts.map((font, index) => (
+										<option key={index} value={font.css}>
+											{font.name}
+										</option>
+									))}
+								</select>
+							</div>
+							<div className="fontSize">
+								<p>Size</p>
+								<select
+									className="fontSelect"
+									value={fontSize}
+									onChange={(e) => handleChangeFontSize(e)}
+								>
+									{fontSizes.map((fontSize, index) => (
+										<option key={index} value={fontSize}>
+											{fontSize}
+										</option>
+									))}
+								</select>
+							</div>
+						</div>
+						<div className="credit">
+							<p>Credit</p>
+							<input
+								className={`${fontFamily}`}
+								style={{ fontSize: `${fontSize}px` }}
+								type="text"
+								placeholder="&copy; John Doe"
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

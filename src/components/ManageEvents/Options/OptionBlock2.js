@@ -1,6 +1,7 @@
 import { useState } from "react"
+import * as Icon from "react-feather"
 
-import ToggleSwitch from "../../ToggleSwitch"
+// import ToggleSwitch from "../../ToggleSwitch"
 
 import "./OptionBlock2.css"
 
@@ -30,7 +31,7 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
 				<p>2. Destination folders</p>
-				<ToggleSwitch toggle={toggle} setToggle={setToggle} />
+				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
 
 			<div className="folderContainer flex col">
@@ -44,20 +45,27 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 				/>
 				<p className="below">Type and hit ENTER to create a folder</p>
 				{folders &&
-					folders.map((folder, index) => (
-						<div key={index} className="folderList flex row aic">
-							<div className="flex row">
-								<div className="textBlock">=</div>
-								<div className="textBlock">{folder}</div>
-							</div>
-							<div className="flex row">
-								<div className="textBlock">Pen</div>
-								<div className="textBlock" onClick={() => removeFolder(index)}>
-									Bin
+					folders
+						.sort((a, b) => a.localeCompare(b))
+						.map((folder, index) => (
+							<div key={index} className="folderList flex row aic">
+								<div className="flex row">
+									<div className="textBlock">=</div>
+									<div className="textBlock">{folder}</div>
+								</div>
+								<div className="flex row">
+									<div className="textBlock">
+										<Icon.Edit2 size={20} />
+									</div>
+									<div
+										className="textBlock"
+										onClick={() => removeFolder(index)}
+									>
+										<Icon.Trash2 size={20} />
+									</div>
 								</div>
 							</div>
-						</div>
-					))}
+						))}
 			</div>
 		</div>
 	)

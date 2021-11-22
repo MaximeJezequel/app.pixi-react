@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom"
+import * as Icon from "react-feather"
 
 import ToggleSwitch from "../../ToggleSwitch"
 import myTeam from "../../../data/myTeam"
@@ -10,7 +11,7 @@ const OptionBlock5 = ({ toggle, setToggle }) => {
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
 				<p>5. Team</p>
-				<ToggleSwitch toggle={toggle} setToggle={setToggle} />
+				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
 
 			<div className="teamContainer flex col">
@@ -61,7 +62,9 @@ const OptionBlock5 = ({ toggle, setToggle }) => {
 					<NavLink to="/team">Manage team</NavLink>
 				</div>
 				<div className="inviteRight">
-					<div className="circleAvatar newGuest flex aic jcc">N+</div>
+					<div className="circleAvatar newGuest flex aic jcc">
+						<Icon.UserPlus size={20} />
+					</div>
 				</div>
 			</div>
 		</div>
