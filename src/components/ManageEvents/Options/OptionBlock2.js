@@ -55,13 +55,13 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 								</div>
 								<div className="flex row">
 									<div className="textBlock">
-										<Icon.Edit2 size={20} />
+										<Icon.Edit2 size={14} />
 									</div>
 									<div
 										className="textBlock"
 										onClick={() => removeFolder(index)}
 									>
-										<Icon.Trash2 size={20} />
+										<Icon.Trash2 size={14} />
 									</div>
 								</div>
 							</div>
