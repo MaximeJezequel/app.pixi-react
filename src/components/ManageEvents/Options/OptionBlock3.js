@@ -13,7 +13,7 @@ const OptionBlock3 = ({ toggle, setToggle }) => {
 	return (
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
-				<p>3. Auto enhancement</p>
+				<p>3. Photo Enhancement</p>
 
 				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>

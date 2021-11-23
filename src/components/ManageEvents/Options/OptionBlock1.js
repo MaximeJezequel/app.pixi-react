@@ -29,18 +29,17 @@ const OptionBlock1 = ({ toggle, setToggle, bubbleValue, setBubbleValue }) => {
 	return (
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
-				<p>1. Photographer's copyright</p>
+				<p>1. Photographer's Copyright</p>
 				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
 
-			<div className="copyrightContainer flex col">
+			<div className="copyrightContainer flex col jcsb">
 				<ToggleParam
-					text="Show watermark"
+					text="Show copyright"
 					toggle={toggle}
 					setToggle={setToggle}
 				/>
-
-				<div className="flex row">
+				<div className="positionContainer flex row">
 					<div className="position">
 						<p>Position</p>
 						<BubbleGrid
@@ -49,7 +48,7 @@ const OptionBlock1 = ({ toggle, setToggle, bubbleValue, setBubbleValue }) => {
 						/>
 					</div>
 
-					<div className="copyright">
+					<div className="copyright flex col">
 						<div className="font flex row">
 							<div className="fontName">
 								<p>Font</p>
@@ -65,6 +64,7 @@ const OptionBlock1 = ({ toggle, setToggle, bubbleValue, setBubbleValue }) => {
 									))}
 								</select>
 							</div>
+
 							<div className="fontSize">
 								<p>Size</p>
 								<select

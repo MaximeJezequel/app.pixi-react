@@ -7,13 +7,15 @@ const ButtonBar = () => {
 		<div className="buttonBar flex">
 			<button className="deleteBtn flex aic jcc">
 				<Icon.Trash2 size={14} />
-				<div className="flex aic jcc"> Delete</div>
+				<div className="flex aic jcc">
+					<span>Delete</span>
+				</div>
 			</button>
 			<button className="cancelBtn flex aic jcc">
-				<Icon.X size={14} /> Cancel
+				<Icon.X size={14} /> <span>Cancel</span>
 			</button>
 			<button className="saveBtn flex aic jcc">
-				<Icon.Save size={14} /> Save
+				<Icon.Save size={14} /> <span>Save</span>
 			</button>
 		</div>
 	)

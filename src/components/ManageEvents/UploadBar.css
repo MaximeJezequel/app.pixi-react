@@ -5,13 +5,18 @@
 }
 
 .uploadBtn {
-	width: 100px;
+	width: 120px;
 	margin: 5px 0px 5px 10px;
 	background-color: #333335;
-	color: #66686d;
+	/* color: #66686d; */
+	color: white;
 	border: transparent 1px solid;
 	border-radius: 6px;
 	padding: 8px 15px;
+}
+.uploadBtn span {
+	margin: 0 10px;
+	color: white;
 }
 
 .uploadSpeechBubble {

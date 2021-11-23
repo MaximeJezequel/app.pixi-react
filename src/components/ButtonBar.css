@@ -12,20 +12,26 @@
 	padding: 8px 15px;
 }
 
+.deleteBtn span,
+.cancelBtn span,
+.saveBtn span {
+	margin: 0 10px;
+}
+
 .deleteBtn {
-	background-color: transparent;
-	color: #66686d;
+	background-color: var(--dark-blue-color);
+	color: white;
 	border: transparent 1px solid;
 }
 .cancelBtn {
-	background-color: transparent;
-	color: #b4b7bd;
-	border: #b4b7bd 1px solid;
+	background-color: var(--dark-grey-color);
+	color: white;
+	border: transparent 1px solid;
 }
 .saveBtn {
 	background-color: var(--red-color);
 	color: white;
-	border: none;
+	border: transparent 1px solid;
 }
 .deleteBtn:hover,
 .cancelBtn:hover,
@@ -35,7 +41,10 @@
 
 @media screen and (max-width: 1200px) {
 	.buttonBar {
-		bottom: 0;
+		position: absolute;
 		justify-content: center;
+		bottom: 40px;
+		left: 0;
+		right: 0;
 	}
 }

@@ -1,0 +1,36 @@
+/***watermark***/
+
+/* .watermarkGrid {
+	width: 30%;
+} */
+.watermarkSliders,
+.copyrightElts {
+	width: 70%;
+}
+
+.sliderTitle {
+	width: 100%;
+}
+
+.sliderContainer {
+	width: 100%;
+	position: relative;
+}
+
+.sliderRange {
+	width: 100%;
+	margin: 0;
+	margin-top: 0px;
+	padding: 0;
+}
+
+.boxSize {
+	width: 30px;
+	height: 25px;
+	text-align: center;
+	font-size: 14px;
+	border: 1px solid var(--dark-grey-color);
+	background-color: var(--dark-grey-color);
+	color: white;
+	border-radius: 3px;
+}

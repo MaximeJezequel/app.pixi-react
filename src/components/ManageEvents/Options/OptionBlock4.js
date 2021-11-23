@@ -31,7 +31,7 @@ const OptionBlock4 = ({ toggle, setToggle }) => {
 			</div>
 
 			<div className="ftpContainer flex col">
-				<div className="hostPort flex row">
+				<div className="hostPort flex row jcsb">
 					<div className="host flex col">
 						<label htmlFor="Host">Host</label>
 						<input

@@ -1,3 +1,5 @@
+import "./Preview.css"
+
 const Preview = ({ image }) => {
 	return (
 		<div className="preview flex col">

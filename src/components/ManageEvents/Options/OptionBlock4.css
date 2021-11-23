@@ -1,19 +1,12 @@
 /***FTP***/
-.ftpContainer {
-	margin: 12px 0;
-}
 
 .ftpContainer input {
 	padding: 10px;
 	margin-bottom: 15px;
-	border: #3b4253 1px solid;
+	border: 1px solid var(--dark-grey-color);
 	background-color: var(--dark-blue-color);
 	color: white;
 	border-radius: 0.5em;
-}
-
-.hostPort {
-	justify-content: space-between;
 }
 
 .host {

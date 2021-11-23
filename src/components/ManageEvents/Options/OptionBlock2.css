@@ -1,21 +1,13 @@
 /***Destination folder***/
 
-.folderContainer {
-	padding-top: 12px;
-}
-
 .inputFolder {
 	width: calc(100% - 20px);
 	padding: 10px;
 	margin-bottom: 15px;
-	border: #3b4253 1px solid;
+	border: 1px solid var(--dark-grey-color);
 	background-color: var(--dark-blue-color);
 	color: white;
 	border-radius: 0.5em;
-}
-
-.folderList {
-	justify-content: space-between;
 }
 
 .textBlock {

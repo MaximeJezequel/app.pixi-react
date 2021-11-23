@@ -1,15 +1,20 @@
 /***Copyright***/
-.copyrightContainer {
-	justify-content: space-between;
+
+.position {
+	width: 30%;
 }
 
 .copyright {
 	width: 70%;
 }
 
-.fontName,
+.fontName {
+	width: calc(75% - 10px);
+	padding: 0 10px;
+}
+
 .fontSize {
-	width: 50%;
+	width: calc(25% - 10px);
 	padding: 0 10px;
 }
 
@@ -18,7 +23,7 @@
 	width: 100%;
 	padding: 10px;
 	background-color: var(--dark-blue-color);
-	border: #3b4253 1px solid;
+	border: 1px solid var(--dark-grey-color);
 	color: white;
 	border-radius: 0.5em;
 }
@@ -40,9 +45,9 @@
 	height: 26px;
 	padding: 10px;
 	background-color: var(--dark-blue-color);
-	border: #3b4253 1px solid;
+	border: 1px solid var(--dark-grey-color);
 	color: white;
-	border-radius: 0.5em;
+	border-radius: 7px;
 }
 
 .merriweather {
