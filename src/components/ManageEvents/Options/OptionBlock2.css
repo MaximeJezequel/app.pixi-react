@@ -16,3 +16,9 @@
 .textBlock:hover {
 	cursor: pointer;
 }
+
+.inputBlock {
+	background-color: transparent;
+	border: 1px solid transparent;
+	color: white;
+}

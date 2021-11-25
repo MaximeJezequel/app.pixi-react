@@ -1,6 +1,9 @@
 import { useState } from "react"
 import * as Icon from "react-feather"
 
+// import { Alert } from "@material-ui/lab"
+// import { Snackbar } from "@material-ui/core"
+
 // import ToggleSwitch from "../../ToggleSwitch"
 
 import "./OptionBlock2.css"
@@ -17,13 +20,13 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 
 	const handleInputChange = (e) => setNewFolder(e.target.value)
 
-	const addFolder = (e) => {
+	const addTag = (e) => {
 		if (e.keyCode === 13 && newFolder.length > 0) {
 			if (folders.includes(newFolder)) {
-				alert(`Snackbar : A folder named "${newFolder}" already exist`)
+				alert(`Snackbar : A tag named "${newFolder}" already exist`)
 			} else if (folders.length > 5) {
 				alert(
-					"Snackbar: Maximum 6 folders authorized, please delete a folder before creating a new one !"
+					"Snackbar: Maximum 6 tags authorized, please delete a tag before creating a new one !"
 				)
 			} else {
 				setFolders([...folders, newFolder])
@@ -32,9 +35,27 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 			}
 		}
 	}
-	const removeFolder = (indexToDelete) => {
+
+	const editTag = (indexToUpdate) => {
+		setFolders([
+			...folders.filter((folder, index) => index !== indexToUpdate),
+			"new",
+		])
+	}
+
+	const removeTag = (indexToDelete) => {
 		setFolders(folders.filter((folder, index) => index !== indexToDelete))
 	}
+	// <Snackbar
+	// 	open={addAlert}
+	// 	autoHideDuration={6000}
+	// 	anchorOrigin={{
+	// 		vertical: "top",
+	// 		horizontal: "center",
+	// 	}}
+	// >
+	// 	<Alert severity="success">Membre ajouté avec succès</Alert>
+	// </Snackbar>
 
 	return (
 		<div className="optionCard">
@@ -50,7 +71,7 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 					placeholder="Tag name"
 					className="inputFolder"
 					onChange={handleInputChange}
-					onKeyDown={(e) => addFolder(e)}
+					onKeyDown={(e) => addTag(e)}
 				/>
 				<p className="below">Type and hit ENTER to create a tag</p>
 				{folders &&
@@ -60,17 +81,14 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 							<div key={index} className="folderList flex row aic jcsb">
 								<div className="flex row">
 									<div className="textBlock">=</div>
-									<div className="textBlock">{folder}</div>
+									<input className="inputBlock" value={folder} />
 								</div>
 								<div className="flex row">
-									<div className="textBlock">
-										<Icon.Edit2 size={14} />
+									<div className="textBlock" onClick={() => editTag(index)}>
+										{/* <Icon.Edit2 size={14} /> */}
 									</div>
-									<div
-										className="textBlock"
-										onClick={() => removeFolder(index)}
-									>
-										<Icon.Trash2 size={14} />
+									<div className="textBlock" onClick={() => removeTag(index)}>
+										<Icon.X size={14} />
 									</div>
 								</div>
 							</div>

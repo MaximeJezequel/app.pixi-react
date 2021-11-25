@@ -1,7 +1,7 @@
 /****ButtonBar****/
 .buttonBar {
 	justify-content: right;
-	padding: 0 40px;
+	padding: 0 30px;
 	margin-top: 64px;
 }
 .deleteBtn,
@@ -41,10 +41,11 @@
 
 @media screen and (max-width: 1200px) {
 	.buttonBar {
-		position: absolute;
+		position: fixed;
 		justify-content: center;
 		bottom: 40px;
 		left: 0;
 		right: 0;
+		z-index: 10;
 	}
 }

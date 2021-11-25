@@ -1,11 +1,15 @@
 /***watermark***/
 
-/* .watermarkGrid {
-	width: 30%;
-} */
-.watermarkSliders,
-.copyrightElts {
-	width: 70%;
+.watermarkSliders {
+	width: 100%;
+}
+
+.watermarkPosition {
+	width: 100%;
+}
+
+.position {
+	width: max(300px, 30%);
 }
 
 .sliderTitle {

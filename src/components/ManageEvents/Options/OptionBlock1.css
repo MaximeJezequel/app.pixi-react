@@ -9,12 +9,12 @@
 }
 
 .fontName {
-	width: calc(75% - 10px);
+	width: calc(70% - 10px);
 	padding: 0 10px;
 }
 
 .fontSize {
-	width: calc(25% - 10px);
+	width: calc(30% - 10px);
 	padding: 0 10px;
 }
 
