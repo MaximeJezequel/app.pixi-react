@@ -56,7 +56,7 @@ const Watermark = ({
 
 			<div className="watermarkContainer">
 				<div className="watermarkPosition flex row jcsb">
-					<div className="position flex col">
+					<div className="position">
 						<p>Position</p>
 						<BubbleGrid
 							bubbleValue={bubbleValue}
@@ -67,7 +67,7 @@ const Watermark = ({
 					<div className="watermarkSliders flex col">
 						<div className="slider1 flex col">
 							<div className="sliderTitle flex row aic jcsb">
-								<p>Size of the watermark (%)</p>
+								<div className="sliderLabel">Size of the watermark (%)</div>
 								<input
 									className="boxSize"
 									value={slider1}
@@ -90,11 +90,13 @@ const Watermark = ({
 
 							<div className="slider2 flex col">
 								<div className="sliderTitle flex row aic jcsb">
-									<p>Distance from the edge of the photo (%)</p>
+									<div className="sliderLabel">
+										Distance from the edge of the photo (%)
+									</div>
 									<input
 										className="boxSize flex aic jcc"
 										value={slider2}
-										onChange={(e) => handleChange2(e)}
+										onChange={(e) => handleChange2(e.target.value)}
 									/>
 								</div>
 								<div className="sliderContainer">

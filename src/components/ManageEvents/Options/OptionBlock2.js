@@ -17,6 +17,7 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 	])
 
 	const [newFolder, setNewFolder] = useState("")
+	const [updateTag, setUpdateTag] = useState("")
 
 	const handleInputChange = (e) => setNewFolder(e.target.value)
 
@@ -36,11 +37,9 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 		}
 	}
 
-	const editTag = (indexToUpdate) => {
-		setFolders([
-			...folders.filter((folder, index) => index !== indexToUpdate),
-			"new",
-		])
+	const editTag = (e, indexToUpdate) => {
+		// setUpdateTag(e.target.value)
+		// setFolders([...folders.filter((tag) => tag !== updateTag), e.target.value])
 	}
 
 	const removeTag = (indexToDelete) => {
@@ -81,12 +80,14 @@ const OptionBlock2 = ({ toggle, setToggle }) => {
 							<div key={index} className="folderList flex row aic jcsb">
 								<div className="flex row">
 									<div className="textBlock">=</div>
-									<input className="inputBlock" value={folder} />
+									<input
+										className="inputBlock"
+										value={folder}
+										onClick={(e) => setUpdateTag(e.target.value)}
+										onChange={(e) => editTag(e, index)}
+									/>
 								</div>
 								<div className="flex row">
-									<div className="textBlock" onClick={() => editTag(index)}>
-										{/* <Icon.Edit2 size={14} /> */}
-									</div>
 									<div className="textBlock" onClick={() => removeTag(index)}>
 										<Icon.X size={14} />
 									</div>

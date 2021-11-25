@@ -1,6 +1,6 @@
 /***watermark***/
 
-.watermarkSliders {
+.watermarkContainer {
 	width: 100%;
 }
 
@@ -12,6 +12,10 @@
 	width: max(300px, 30%);
 }
 
+.watermarkSliders {
+	width: 70%;
+}
+
 .sliderTitle {
 	width: 100%;
 }
@@ -19,6 +23,11 @@
 .sliderContainer {
 	width: 100%;
 	position: relative;
+}
+
+.sliderLabel {
+	width: 80%;
+	padding: 18px 0 6px 0;
 }
 
 .sliderRange {
@@ -37,4 +46,14 @@
 	background-color: var(--dark-grey-color);
 	color: white;
 	border-radius: 3px;
+}
+
+@media screen and (max-width: 1200px) {
+	.watermarkPosition {
+		flex-direction: column;
+	}
+
+	.watermarkSliders {
+		width: 100%;
+	}
 }

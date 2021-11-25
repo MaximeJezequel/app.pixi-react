@@ -49,7 +49,7 @@ const OptionBlock1 = ({ toggle, setToggle, bubbleValue, setBubbleValue }) => {
 					</div>
 
 					<div className="copyright flex col">
-						<div className="font flex row">
+						<div className="font flex row jcsb">
 							<div className="fontName">
 								<p>Font</p>
 								<select

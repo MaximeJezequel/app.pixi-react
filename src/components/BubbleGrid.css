@@ -1,5 +1,6 @@
 .bubbleGrid {
 	padding: 0 5px;
+	margin-left: -10px;
 	--diameter: 15px;
 }
 

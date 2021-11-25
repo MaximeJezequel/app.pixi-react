@@ -42,7 +42,10 @@ const OptionBlock5 = ({ toggle, setToggle }) => {
 							{member.role[0].toUpperCase() + member.role.substring(1)}
 						</div>
 						{member.role === "guest" ? (
-							<div className="guestAction flex aic jcc">x</div>
+							<div className="guestAction flex aic jcc">
+								{" "}
+								<Icon.X size={14} />
+							</div>
 						) : (
 							<div className="memberAction flex aic jcc"></div>
 						)}

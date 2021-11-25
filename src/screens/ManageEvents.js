@@ -15,8 +15,8 @@ import image from "../assets/modele.jpg"
 
 function ManageEvents() {
 	const [bubbleGridWatermark, setBubbleGridWatermark] = useState("3-3") //initial position of watermark
-	const [slider1, setSlider1] = useState(73) //percent
-	const [slider2, setSlider2] = useState(4) //percent
+	const [slider1, setSlider1] = useState(100) //percent
+	const [slider2, setSlider2] = useState(0) //percent
 	const [bubbleGridCopyright, setBubbleGridCopyright] = useState("3-1") //initial position of copyright
 	const [showCopyright, setShowCopyright] = useState(true)
 
