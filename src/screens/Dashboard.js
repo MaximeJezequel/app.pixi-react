@@ -1,6 +1,7 @@
 import ButtonBar2 from "../components/ButtonBar2"
 
 import "../App.css"
+import "./DashBoard.css"
 
 const DashBoard = () => {
 	let lastEvents = [

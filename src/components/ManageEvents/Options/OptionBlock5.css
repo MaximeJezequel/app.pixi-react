@@ -1,6 +1,10 @@
 /***team***/
 
-.inputTeam {
+.teamContainer {
+	padding-top: 12px;
+}
+
+.teamInput {
 	border-radius: 0.5em;
 }
 
@@ -82,5 +86,5 @@
 }
 
 .inviteLeft {
-	width: 60%;
+	width: 65%;
 }

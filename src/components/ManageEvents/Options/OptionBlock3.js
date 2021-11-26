@@ -1,11 +1,10 @@
 import { useState } from "react"
 
-import ToggleSwitch from "../../ToggleSwitch"
 import ToggleParam from "../../ToggleParam"
 
 import "./OptionBlock3.css"
 
-const OptionBlock3 = ({ toggle, setToggle }) => {
+const OptionBlock3 = () => {
 	const [autoExpo, setAutoExpo] = useState(true)
 	const [autoWhite, setAutoWhite] = useState(false)
 	const [autoNoise, setAutoNoise] = useState(true)
@@ -14,8 +13,6 @@ const OptionBlock3 = ({ toggle, setToggle }) => {
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
 				<p>3. Photo Enhancement</p>
-
-				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
 			<div className="enhancementContainer">
 				<ToggleParam

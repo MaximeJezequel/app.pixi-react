@@ -82,7 +82,6 @@ const Watermark = ({
 										min={0}
 										max={max1}
 										value={slider1}
-										color="white"
 										onChange={(e, val) => handleChange1(val)}
 									/>
 								</ThemeProvider>
@@ -107,7 +106,6 @@ const Watermark = ({
 											min={0}
 											max={max2}
 											value={slider2}
-											color="white"
 											onChange={(e, val) => handleChange2(val)}
 										/>
 									</ThemeProvider>

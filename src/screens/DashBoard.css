@@ -1,0 +1,77 @@
+.recentEventCard {
+	width: calc(25% - 20px);
+	height: 130px;
+	border-radius: 6px 0 6px 6px;
+	margin: 10px;
+	padding: 20px;
+}
+.recentEventCard:hover {
+	cursor: pointer;
+}
+
+.eventTable {
+	background-color: var(--dark-blue-color);
+	width: calc(100% - 20px);
+	height: 800px;
+	margin: 10px;
+}
+
+.ev1 {
+	/* background-color: violet; */
+	background-image: linear-gradient(
+		to right top,
+		#756af0,
+		#7f74f1,
+		#897ff3,
+		#9389f4,
+		#9c93f5
+	);
+}
+.ev2 {
+	/* background-color: var(--red-color); */
+	background-image: linear-gradient(
+		to right top,
+		#ea5455,
+		#ec6060,
+		#ee6b6c,
+		#ef7677,
+		#f08182
+	);
+}
+.ev3 {
+	/* background-color: orange; */
+	background-image: linear-gradient(
+		to right top,
+		#ff932c,
+		#ff9d40,
+		#ffa652,
+		#ffaf64,
+		#ffb875
+	);
+}
+.ev4 {
+	/* background-color: rgb(50, 218, 50); */
+	background-image: linear-gradient(
+		to right top,
+		#2ac871,
+		#32cc77,
+		#3ad17d,
+		#41d583,
+		#48da89
+	);
+}
+
+.eventRow {
+	padding: 10px;
+	width: calc(100% - 20px);
+	background-color: #66686d;
+	border-top: 1px solid #0e0e15;
+}
+
+/***MEDIA QUERIES***/
+
+@media screen and (max-width: 1200px) {
+	.recentEventCard {
+		width: calc(100% - 60px);
+	}
+}

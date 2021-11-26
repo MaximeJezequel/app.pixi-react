@@ -1,5 +1,9 @@
 /***Copyright***/
 
+.copyrightContainer {
+	padding-top: 12px;
+}
+
 .position {
 	width: max(300px, 30%);
 }

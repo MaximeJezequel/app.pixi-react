@@ -1,23 +1,27 @@
-/***Destination folder***/
+/***Tags***/
 
-.inputFolder {
+.tagContainer {
+	padding-top: 12px;
+}
+
+.tagInput {
 	width: calc(100% - 20px);
 	padding: 10px;
 	margin-bottom: 15px;
 	border: 1px solid var(--dark-grey-color);
-	background-color: var(--dark-blue-color);
-	color: white;
+	background-color: transparent;
+	color: var(--dark-text-regular);
 	border-radius: 0.5em;
 }
 
-.textBlock {
+.tagBlock {
 	padding: 5px;
 }
-.textBlock:hover {
+.tagBlock:hover {
 	cursor: pointer;
 }
 
-.inputBlock {
+.tagBlockInput {
 	background-color: transparent;
 	border: 1px solid transparent;
 	color: white;

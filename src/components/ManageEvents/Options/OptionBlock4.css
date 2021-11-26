@@ -1,5 +1,9 @@
 /***FTP***/
 
+.ftpContainer {
+	padding-top: 12px;
+}
+
 .ftpContainer input {
 	padding: 10px;
 	margin-bottom: 15px;

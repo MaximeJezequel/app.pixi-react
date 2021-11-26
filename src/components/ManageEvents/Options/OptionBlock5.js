@@ -1,17 +1,15 @@
 import { NavLink } from "react-router-dom"
 import * as Icon from "react-feather"
 
-import ToggleSwitch from "../../ToggleSwitch"
 import myTeam from "../../../data/myTeam"
 
 import "./OptionBlock5.css"
 
-const OptionBlock5 = ({ toggle, setToggle }) => {
+const OptionBlock5 = () => {
 	return (
 		<div className="optionCard">
 			<div className="optionTitle flex row aic">
 				<p>5. Team</p>
-				{/* <ToggleSwitch toggle={toggle} setToggle={setToggle} /> */}
 			</div>
 
 			<div className="teamContainer flex col">
