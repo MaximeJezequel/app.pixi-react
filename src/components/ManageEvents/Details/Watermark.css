@@ -4,6 +4,39 @@
 	width: 100%;
 }
 
+.uploadContainer {
+	padding-top: 12px;
+}
+
+.importFileContainer {
+	margin-bottom: 15px;
+	border: 1px solid var(--dark-grey-color);
+	background-color: var(--dark-blue-color);
+	color: white;
+	border-radius: 0.5em;
+}
+
+.importedFileName {
+	padding: 10px;
+	background-color: var(--dark-blue-color);
+	color: white;
+	border-radius: 0.5em;
+	border: none;
+	width: 90%;
+}
+
+.importFileBtn {
+	padding: 10px 20px;
+	background-color: var(--red-color);
+	color: white;
+	border-radius: 0 0.5em 0.5em 0;
+	border: none;
+	width: max(100px, 10%);
+}
+.importFileBtn:hover {
+	cursor: pointer;
+}
+
 .watermarkPosition {
 	width: 100%;
 }
