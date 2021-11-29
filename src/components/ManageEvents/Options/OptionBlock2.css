@@ -26,3 +26,8 @@
 	border: 1px solid transparent;
 	color: white;
 }
+
+.textFieldInput input,
+.textFieldInput label {
+	color: white;
+}

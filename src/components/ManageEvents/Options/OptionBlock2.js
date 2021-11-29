@@ -59,9 +59,11 @@ const OptionBlock2 = () => {
 	const modifyTag = () => {
 		if (tags.includes(updateTag)) {
 			alert(`Snackbar : A tag named "${updateTag}" already exist`)
-		} else {
+		} else if (updateTag.length > 0) {
 			setTags([...tags.filter((tag) => tag !== oldTag), updateTag])
 			handleCloseEdit()
+		} else {
+			alert(`Snackbar : Tag name should at least contain 1 character`)
 		}
 	}
 
@@ -91,7 +93,7 @@ const OptionBlock2 = () => {
 					placeholder="Tag name"
 					className="tagInput"
 					onChange={handleInputChange}
-					onKeyDown={(e) => e.keyCode === 13 && newTag.length > 0 && addTag(e)}
+					onKeyDown={(e) => e.key === "Enter" && newTag.length > 0 && addTag(e)}
 				/>
 				<p className="below">Type and hit ENTER to create a tag</p>
 
@@ -117,7 +119,7 @@ const OptionBlock2 = () => {
 				<Dialog open={open} onClose={() => setOpen(false)}>
 					<DialogTitle
 						sx={{
-							backgroundColor: "pink",
+							backgroundColor: "#3b4253",
 							color: "white",
 						}}
 					>
@@ -126,31 +128,35 @@ const OptionBlock2 = () => {
 					<DialogContent
 						className="flex col"
 						sx={{
-							backgroundColor: "pink",
+							backgroundColor: "#3b4253",
 						}}
 					>
 						<TextField
 							autoFocus
 							margin="dense"
 							id="name"
+							className="textFieldInput"
 							label="New Tag Name"
 							type="text"
 							variant="standard"
 							onChange={(e) => setUpdateTag(e.target.value)}
 							onKeyDown={(e) =>
-								e.keyCode === 13 && updateTag.length > 0 && modifyTag()
+								updateTag.length > 0 ? e.key === "Enter" && modifyTag() : null
 							}
 						/>
 					</DialogContent>
 					<DialogActions
 						sx={{
-							backgroundColor: "pink",
+							backgroundColor: "#3b4253",
+							color: "white",
 						}}
 					>
 						<Button
 							onClick={() => handleCloseEdit()}
 							sx={{
-								backgroundColor: "yellow",
+								backgroundColor: "#3b4253",
+								color: "white",
+								border: "1px solid white",
 							}}
 						>
 							Cancel
@@ -158,7 +164,8 @@ const OptionBlock2 = () => {
 						<Button
 							onClick={() => modifyTag()}
 							sx={{
-								backgroundColor: "blue",
+								backgroundColor: "#dd5353",
+								color: "white",
 							}}
 						>
 							Validate

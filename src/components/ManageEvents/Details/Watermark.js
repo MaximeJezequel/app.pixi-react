@@ -1,7 +1,5 @@
 import React from "react"
-import Slider from "@material-ui/core/Slider"
-import { createTheme } from "@material-ui/core/styles"
-import { ThemeProvider } from "@material-ui/styles"
+import { Slider } from "@mui/material"
 
 import BubbleGrid from "../../BubbleGrid"
 
@@ -16,6 +14,11 @@ const Watermark = ({
 	max2,
 	bubbleValue,
 	setBubbleValue,
+	inputFile,
+	watermarkFile,
+	setWatermarkFile,
+	handleUploadChange,
+	handleUploadClick,
 }) => {
 	const handleChange1 = (val) => {
 		val > max1 ? setSlider1(max1) : setSlider1(val)
@@ -23,35 +26,42 @@ const Watermark = ({
 	const handleChange2 = (val) => {
 		val > max2 ? setSlider2(max2) : setSlider2(val)
 	}
-	const muiTheme = createTheme({
-		overrides: {
-			MuiSlider: {
-				root: { width: "98%" },
-				thumb: {
-					color: "var(--dark-grey-color)",
-					border: "2px solid var(--red-color)",
-					height: "16px",
-					width: "16px",
-					marginTop: "-4px",
-				},
-				track: {
-					color: "var(--red-color)",
-					height: "8px",
-					borderRadius: "8px",
-				},
-				rail: {
-					color: "var(--dark-grey-color)",
-					height: "8px",
-					borderRadius: "8px",
-					width: "102%",
-				},
-			},
+
+	const sliderStyle = {
+		color: "var(--red-color)",
+		"& .MuiSlider-rail": {
+			backgroundColor: "var(--dark-grey-color)",
+			borderRadius: "8px",
+			marginLeft: "-8px",
+			width: "calc(100% + 16px)",
 		},
-	})
+		"& .MuiSlider-track": {
+			borderRadius: "8px",
+			marginLeft: "-8px",
+		},
+	}
+
 	return (
 		<>
 			<label htmlFor="Watermark">Watermark</label>
-			<input type="file" className="inputWatermark" />
+			{/* <input type="file" className="inputWatermark" /> */}
+			<div className="importFileContainer flex row jcsb">
+				<input
+					className="importedFileName"
+					placeholder="Choose file"
+					value={watermarkFile}
+				/>
+				<input
+					type="file"
+					id="file"
+					ref={inputFile}
+					style={{ display: "none" }}
+					onChange={(e) => handleUploadChange(e)}
+				/>
+				<button className="importFileBtn" onClick={handleUploadClick}>
+					Import
+				</button>
+			</div>
 			<p className="below">Allowed file types: png, jpg, jpeg.</p>
 
 			<div className="watermarkContainer">
@@ -75,16 +85,15 @@ const Watermark = ({
 								/>
 							</div>
 							<div className="sliderContainer">
-								<ThemeProvider theme={muiTheme}>
-									<Slider
-										aria-label="test"
-										name="Slider1"
-										min={0}
-										max={max1}
-										value={slider1}
-										onChange={(e, val) => handleChange1(val)}
-									/>
-								</ThemeProvider>
+								<Slider
+									aria-label="test"
+									name="Slider1"
+									min={0}
+									max={max1}
+									value={slider1}
+									onChange={(e, val) => handleChange1(val)}
+									sx={sliderStyle}
+								/>
 							</div>
 
 							<div className="slider2 flex col">
@@ -99,16 +108,15 @@ const Watermark = ({
 									/>
 								</div>
 								<div className="sliderContainer">
-									<ThemeProvider theme={muiTheme}>
-										<Slider
-											aria-label="test"
-											name="Slider2"
-											min={0}
-											max={max2}
-											value={slider2}
-											onChange={(e, val) => handleChange2(val)}
-										/>
-									</ThemeProvider>
+									<Slider
+										aria-label="test"
+										name="Slider2"
+										min={0}
+										max={max2}
+										value={slider2}
+										onChange={(e, val) => handleChange2(val)}
+										sx={sliderStyle}
+									/>
 								</div>
 							</div>
 						</div>

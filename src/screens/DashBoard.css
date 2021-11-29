@@ -1,5 +1,6 @@
 .recentEventCard {
-	width: calc(25% - 20px);
+	/* width: calc(25% - 20px); */
+	width: calc(100% - 60px);
 	height: 130px;
 	border-radius: 6px 0 6px 6px;
 	margin: 10px;
@@ -71,7 +72,7 @@
 /***MEDIA QUERIES***/
 
 @media screen and (max-width: 1200px) {
-	.recentEventCard {
+	/* .recentEventCard {
 		width: calc(100% - 60px);
-	}
+	} */
 }

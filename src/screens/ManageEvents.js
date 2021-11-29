@@ -1,5 +1,5 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 import ButtonBar from "../components/ButtonBar"
 import OptionBlock1 from "../components/ManageEvents/Options/OptionBlock1"
@@ -14,6 +14,7 @@ import Watermark from "../components/ManageEvents/Details/Watermark"
 import image from "../assets/modele.jpg"
 
 function ManageEvents() {
+	const [watermarkFile, setWatermarkFile] = useState("") //watermark filename
 	const [bubbleGridWatermark, setBubbleGridWatermark] = useState("3-3") //initial position of watermark
 	const [slider1, setSlider1] = useState(100) //percent
 	const [slider2, setSlider2] = useState(0) //percent
@@ -22,6 +23,17 @@ function ManageEvents() {
 
 	let max1 = 100 //maximum watermark size in percent
 	let max2 = 10 //maximum distance between watermark and edge in percent
+
+	const inputFile = useRef(null)
+
+	const handleInputChange = (e) => {
+		setWatermarkFile(e.target.value)
+	}
+
+	const onButtonClick = () => {
+		// `current` points to the mounted file input element
+		inputFile.current.click()
+	}
 
 	return (
 		<div className="App">
@@ -36,6 +48,7 @@ function ManageEvents() {
 							placeholder="Event name"
 							className="inputEvent"
 						/>
+
 						<Watermark
 							slider1={slider1}
 							setSlider1={setSlider1}
@@ -45,6 +58,11 @@ function ManageEvents() {
 							max2={max2}
 							bubbleValue={bubbleGridWatermark}
 							setBubbleValue={setBubbleGridWatermark}
+							inputFile={inputFile}
+							watermarkFile={watermarkFile}
+							setWatermarkFile={setWatermarkFile}
+							handleUploadChange={handleInputChange}
+							handleUploadClick={onButtonClick}
 						/>
 					</div>
 					<Preview image={image} />
