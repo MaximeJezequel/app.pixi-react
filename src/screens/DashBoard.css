@@ -1,10 +1,10 @@
 .recentEventCard {
 	/* width: calc(25% - 20px); */
-	width: calc(100% - 60px);
+	width: calc(100% - 20px);
 	height: 130px;
 	border-radius: 6px 0 6px 6px;
 	margin: 10px;
-	padding: 20px;
+	padding: 20px 0;
 }
 .recentEventCard:hover {
 	cursor: pointer;
@@ -15,6 +15,13 @@
 	width: calc(100% - 20px);
 	height: 800px;
 	margin: 10px;
+}
+
+.dashTableHead {
+	background-color: var(--dark-nav);
+}
+.dashTableBody {
+	background-color: var(--dark-blue-color);
 }
 
 .ev1 {
@@ -72,7 +79,4 @@
 /***MEDIA QUERIES***/
 
 @media screen and (max-width: 1200px) {
-	/* .recentEventCard {
-		width: calc(100% - 60px);
-	} */
 }

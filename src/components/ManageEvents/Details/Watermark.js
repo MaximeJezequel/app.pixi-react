@@ -39,6 +39,10 @@ const Watermark = ({
 			borderRadius: "8px",
 			marginLeft: "-8px",
 		},
+		"& .MuiSlider-thumb": {
+			backgroundColor: "var(--dark-grey-color)",
+			border: "3px solid var(--red-color)",
+		},
 	}
 
 	return (
@@ -50,11 +54,13 @@ const Watermark = ({
 					className="importedFileName"
 					placeholder="Choose file"
 					value={watermarkFile}
+					onClick={handleUploadClick}
 				/>
 				<input
 					type="file"
 					id="file"
 					ref={inputFile}
+					accept=".jpg, .jpeg, .png"
 					style={{ display: "none" }}
 					onChange={(e) => handleUploadChange(e)}
 				/>

@@ -7,6 +7,7 @@
 	--dark-grey-color: #3b4253;
 	--dark-text-regular: white;
 	--red-color: #dd5353;
+	--dark-nav: #23242e;
 }
 .flex {
 	display: flex;
@@ -38,7 +39,7 @@ a {
 	position: relative;
 	min-height: 100vh;
 	height: 100%;
-	padding: 10px 20px;
+	padding: 80px 20px;
 	color: white;
 }
 

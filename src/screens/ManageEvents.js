@@ -26,13 +26,13 @@ function ManageEvents() {
 
 	const inputFile = useRef(null)
 
-	const handleInputChange = (e) => {
-		setWatermarkFile(e.target.value)
-	}
-
-	const onButtonClick = () => {
+	const handleUploadClick = () => {
 		// `current` points to the mounted file input element
 		inputFile.current.click()
+	}
+
+	const handleInputChange = (e) => {
+		setWatermarkFile(e.target.value)
 	}
 
 	return (
@@ -62,7 +62,7 @@ function ManageEvents() {
 							watermarkFile={watermarkFile}
 							setWatermarkFile={setWatermarkFile}
 							handleUploadChange={handleInputChange}
-							handleUploadClick={onButtonClick}
+							handleUploadClick={handleUploadClick}
 						/>
 					</div>
 					<Preview image={image} />

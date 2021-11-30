@@ -1,9 +1,12 @@
+import ButtonBarSingle from "../components/ButtonBarSingle"
+
 import "../App.css"
 
 const Upload = () => {
 	return (
 		<div className="App">
 			<div className="bodyContainer flex col">
+				<ButtonBarSingle btnIcon="Upload" btnText="Upload" />
 				<div className="uploadContainer">
 					<h2 className="eventTitle">Printemps des fameuses</h2>
 					<div className="dragNDrop"></div>

@@ -5,7 +5,7 @@
 	width: 100%;
 	height: 64px;
 	padding: 0 10px;
-	background-color: #23242e;
+	background-color: var(--dark-nav);
 	z-index: 10;
 }
 

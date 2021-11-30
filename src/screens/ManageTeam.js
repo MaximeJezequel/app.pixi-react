@@ -1,10 +1,10 @@
-import ButtonBar2 from "../components/ButtonBar2"
+import ButtonBarSingle from "../components/ButtonBarSingle"
 
 const ManageTeam = () => {
 	return (
 		<div className="App">
 			<div className="bodyContainer flex col">
-				<ButtonBar2 />
+				<ButtonBarSingle btnIcon="UserPlus" btnText="Invite" />
 
 				<h2>YOUR TEAM</h2>
 				<div className="topDiv flex">Top div</div>
