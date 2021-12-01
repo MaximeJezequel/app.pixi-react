@@ -29,14 +29,23 @@ const Upload = () => {
 				},
 			},
 			MuiDropzonePreviewList: {
-				root: { marginLeft: "-10px" },
+				root: {
+					margin: "0px",
+					display: "flex",
+					justifyContent: "space between",
+				},
 				imageContainer: {
 					flexBasis: "calc(20% - 26px)",
 					margin: "6px",
 				},
 				image: {
-					// minWidth: "150px",
-					// minHeight: "150px",
+					minWidth: "100px",
+					height: "auto",
+				},
+			},
+			MuiTypography: {
+				body1: {
+					overflowWrap: "anywhere",
 				},
 			},
 		},
@@ -46,9 +55,10 @@ const Upload = () => {
 		<div className="App">
 			<div className="bodyContainer flex col">
 				<ButtonBarSingle btnIcon="Send" btnText="Send" />
+
 				<div className="uploadContainer">
-					<div className="flex row aic">
-						<div className="avatar flex jcc aic">P</div>
+					<div className="uploadtitle flex aic">
+						<div className="avatar flex jcc aic"></div>
 						<h2 className="eventTitle">PRINTEMPS DES FAMEUSES</h2>
 					</div>
 

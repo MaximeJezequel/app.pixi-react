@@ -1,6 +1,5 @@
 import React from "react"
 
-import { styled } from "@mui/system"
 import { DataGrid } from "@mui/x-data-grid"
 
 import AliceCarousel from "react-alice-carousel"
