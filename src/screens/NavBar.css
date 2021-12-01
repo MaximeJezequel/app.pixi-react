@@ -6,7 +6,7 @@
 	height: 64px;
 	padding: 0 10px;
 	background-color: var(--dark-nav);
-	z-index: 10;
+	z-index: 20;
 }
 
 .navContainer {
