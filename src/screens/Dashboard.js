@@ -1,12 +1,8 @@
 import React from "react"
 
-import Table from "@mui/material/Table"
-import TableBody from "@mui/material/TableBody"
-import TableCell, { tableCellClasses } from "@mui/material/TableCell"
-import TableContainer from "@mui/material/TableContainer"
-import TableHead from "@mui/material/TableHead"
-import TableRow from "@mui/material/TableRow"
-import Paper from "@mui/material/Paper"
+import { styled } from "@mui/system"
+import { DataGrid } from "@mui/x-data-grid"
+
 import AliceCarousel from "react-alice-carousel"
 
 import ButtonBarSingle from "../components/ButtonBarSingle"
@@ -37,49 +33,53 @@ const DashBoard = () => {
 		</div>
 	))
 
-	function createData(avatar, event, date, team, role, actions) {
-		return { avatar, event, date, team, role, actions }
-	}
+	//
 
-	const rows = [
-		createData(
-			"bulle",
-			"Printemps des fameuses",
-			"2021/10/12",
-			[("William", "John", "Mike", "Claire")],
-			"Owner",
-			"..."
-		),
-		createData(
-			"bulle",
-			"Nantes Digital Week",
-			"2021/10/23",
-			[("William", "John")],
-			"Owner",
-			"..."
-		),
-		createData(
-			"bulle",
-			"WEB2DAY",
-			"2021/10/26",
-			["William", "John"],
-			"Owner",
-			"..."
-		),
-		createData(
-			"bulle",
-			"DevFest",
-			"2021/10/30",
-			["John", "William"],
-			"Guest",
-			"..."
-		),
+	const columns = [
+		{ field: "id", headerName: "ID", width: 90 },
+		{
+			field: "firstName",
+			headerName: "First name",
+			width: 150,
+			editable: true,
+		},
+		{
+			field: "lastName",
+			headerName: "Last name",
+			width: 150,
+			editable: true,
+		},
+		{
+			field: "age",
+			headerName: "Age",
+			type: "number",
+			width: 110,
+			editable: true,
+		},
+		{
+			field: "fullName",
+			headerName: "Full name",
+			description: "This column has a value getter and is not sortable.",
+			sortable: false,
+			width: 160,
+			valueGetter: (params) =>
+				`${params.getValue(params.id, "firstName") || ""} ${
+					params.getValue(params.id, "lastName") || ""
+				}`,
+		},
 	]
 
-	const tableCell = {
-		color: "white",
-		borderBottom: "1px solid gray",
-	}
+	const rows = [
+		{ id: 1, lastName: "Snow", firstName: "Jon", age: 35 },
+		{ id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
+		{ id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
+		{ id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
+		{ id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
+		{ id: 6, lastName: "Melisandre", firstName: null, age: 150 },
+		{ id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
+		{ id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
+		{ id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+	]
 
 	return (
 		<div className="App">
@@ -108,106 +108,21 @@ const DashBoard = () => {
 							</div>
 						))} */}
 
-						<TableContainer component={Paper}>
-							<Table>
-								<TableHead>
-									<TableRow>
-										<TableCell
-											className="dashTableHead"
-											sx={tableCell}
-										></TableCell>
-										<TableCell
-											className="dashTableHead"
-											sx={tableCell}
-											align="left"
-										>
-											EVENT
-										</TableCell>
-										<TableCell
-											className="dashTableHead"
-											sx={tableCell}
-											align="left"
-										>
-											DATE
-										</TableCell>
-										<TableCell
-											className="dashTableHead"
-											sx={tableCell}
-											align="left"
-										>
-											TEAM
-										</TableCell>
-										<TableCell
-											className="dashTableHead"
-											sx={tableCell}
-											align="left"
-										>
-											ROLE
-										</TableCell>
-										<TableCell
-											className="dashTableHead"
-											sx={tableCell}
-											align="center"
-										>
-											ACTIONS
-										</TableCell>
-									</TableRow>
-								</TableHead>
-
-								<TableBody>
-									{rows.map((row) => (
-										<TableRow key={row.event} className="dashTableBody">
-											<TableCell
-												component="th"
-												scope="row"
-												sx={{ color: "white", width: "32px" }}
-											>
-												{row.avatar}
-											</TableCell>
-											<TableCell
-												className="dashTableCell"
-												sx={tableCell}
-												align="left"
-											>
-												{row.event}
-											</TableCell>
-											<TableCell
-												className="dashTableCell"
-												sx={tableCell}
-												align="left"
-											>
-												{row.date}
-											</TableCell>
-											<TableCell
-												className="dashTableCell"
-												sx={tableCell}
-												align="left"
-											>
-												{row.team}
-											</TableCell>
-											<TableCell
-												className="dashTableCell"
-												sx={tableCell}
-												align="left"
-											>
-												{row.role}
-											</TableCell>
-											<TableCell
-												className="dashTableCell"
-												align="center"
-												sx={{
-													color: "white",
-													width: "100px",
-													"&:hover": { cursor: "pointer" },
-												}}
-											>
-												{row.actions}
-											</TableCell>
-										</TableRow>
-									))}
-								</TableBody>
-							</Table>
-						</TableContainer>
+						<DataGrid
+							rows={rows}
+							columns={columns}
+							pageSize={10}
+							rowsPerPageOptions={[5, 10, 20]}
+							disableSelectionOnClick
+							autoHeight={true}
+							sx={{
+								root: {
+									width: "640px",
+									heigh: "40vh",
+									color: "white",
+								},
+							}}
+						/>
 					</div>
 				</div>
 			</div>
