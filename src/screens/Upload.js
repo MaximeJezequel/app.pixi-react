@@ -29,6 +29,11 @@ const Upload = () => {
 	let picWidth =
 		windowWidth < 1024 ? windowWidth / 2 - 32 : windowWidth / 5 - 28
 
+	let uploadMsg =
+		windowWidth < 1024
+			? "Click here to upload files"
+			: "Drag & drop files or click here to upload"
+
 	const theme = createTheme({
 		overrides: {
 			MuiDropzoneArea: {
@@ -106,7 +111,7 @@ const Upload = () => {
 								showPreviewsInDropzone={false}
 								showPreviews={true}
 								previewText={`${dropFiles.length} photo(s) ready to go`}
-								dropzoneText={`Drag & drop files or click here to upload`}
+								// dropzoneText={uploadMsg}
 								showAlerts={false}
 								maxFileSize={5000000}
 								filesLimit={20}
