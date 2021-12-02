@@ -13,12 +13,11 @@ const NavBar = () => {
 				<NavLink to={"/events"}>
 					<Icon.Calendar size={14} />
 				</NavLink>
+				<NavLink to={"/upload"}>
+					<Icon.Upload size={14} />
+				</NavLink>
 				<NavLink to={"/team"}>
 					<Icon.Users size={14} />
-				</NavLink>
-				<NavLink to={"/upload"}>
-					{" "}
-					<Icon.Upload size={14} />
 				</NavLink>
 			</div>
 
