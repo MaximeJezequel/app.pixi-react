@@ -1,0 +1,33 @@
+/***Tags***/
+
+.tagContainer {
+	padding-top: 12px;
+}
+
+.tagInput {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid var(--dark-grey-color);
+	background-color: transparent;
+	color: var(--dark-text-regular);
+	border-radius: 0.5em;
+}
+
+.tagBlock {
+	padding: 5px;
+}
+.tagBlock:hover {
+	cursor: pointer;
+}
+
+.tagBlockInput {
+	background-color: transparent;
+	border: 1px solid transparent;
+	color: white;
+}
+
+.textFieldInput input,
+.textFieldInput label {
+	color: white;
+}

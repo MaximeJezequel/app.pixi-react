@@ -1,0 +1,18 @@
+/****ButtonBar****/
+
+.addBtn {
+	border-radius: 6px;
+	margin: 5px 10px;
+	padding: 8px 10px;
+	background-color: var(--red-color);
+	color: white;
+	border: none;
+}
+
+.addBtn:hover {
+	cursor: pointer;
+}
+
+.addBtn span {
+	margin: 0 10px;
+}

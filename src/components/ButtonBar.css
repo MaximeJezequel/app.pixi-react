@@ -1,0 +1,51 @@
+/****ButtonBar****/
+.buttonBar {
+	justify-content: right;
+	padding: 0 30px;
+}
+.deleteBtn,
+.cancelBtn,
+.saveBtn {
+	border-radius: 6px;
+	margin: 5px;
+	padding: 8px 15px;
+}
+
+.deleteBtn span,
+.cancelBtn span,
+.saveBtn span {
+	margin: 0 10px;
+}
+
+.deleteBtn {
+	background-color: var(--dark-blue-color);
+	color: white;
+	border: transparent 1px solid;
+}
+.cancelBtn {
+	background-color: var(--dark-grey-color);
+	color: white;
+	border: transparent 1px solid;
+}
+.saveBtn {
+	background-color: var(--red-color);
+	color: white;
+	border: transparent 1px solid;
+}
+.deleteBtn:hover,
+.cancelBtn:hover,
+.saveBtn:hover {
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+	.buttonBar {
+		position: fixed;
+		justify-content: center;
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background-color: rgba(150, 150, 150, 0.5);
+	}
+}

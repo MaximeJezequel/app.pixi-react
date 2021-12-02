@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Old+Standard+TT&family=Open+Sans&family=Playfair+Display&family=Roboto&display=swap");
+
+/***App***/
+:root {
+	--main-bg-color: #0e0e15;
+	--dark-blue-color: #181924;
+	--dark-grey-color: #3b4253;
+	--dark-text-regular: white;
+	--red-color: #dd5353;
+	--dark-nav: #23242e;
+}
+.flex {
+	display: flex;
+}
+.aic {
+	align-items: center;
+}
+.jcc {
+	justify-content: center;
+}
+.jcsb {
+	justify-content: space-between;
+}
+.col {
+	flex-direction: column;
+}
+.row {
+	flex-direction: row;
+}
+label {
+	margin-bottom: 6px;
+}
+a {
+	color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/***bodyContainer***/
+.bodyContainer {
+	position: relative;
+	min-height: 100vh;
+	height: 100%;
+	padding: 80px 20px;
+	color: white;
+	background-color: var(--main-bg-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+	margin: 0 0 10px 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/**** New event (top div) ****/
+
+.eventInfo,
+.preview {
+	position: relative;
+	align-items: left;
+	margin: 0px 20px;
+	background-color: var(--dark-blue-color);
+}
+.eventInfo {
+	padding: 20px;
+	width: calc(50vw - 60px);
+}
+.preview {
+	width: calc(50vw - 20px);
 }
 
-.App-link {
-  color: #61dafb;
+.inputEvent,
+.inputWatermark,
+.inputTeam {
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid var(--dark-grey-color);
+	background-color: var(--dark-blue-color);
+	color: white;
+	border-radius: 0.5em;
+}
+.below {
+	color: #66686d;
+	font-size: 12px;
+	margin: -12px 0px 20px 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/***Options (bottom div)***/
+.bottomDiv {
+	flex-wrap: wrap;
+	height: 800px;
+}
+
+.optionCard {
+	font-size: 14px;
+	width: calc((100vw - 300px) / 3);
+	flex: 1; /*enables 3 equal columns*/
+	background-color: var(--dark-blue-color);
+	margin: 20px;
+	padding: 10px 20px;
+}
+
+.optionTitle {
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--dark-grey-color);
+}
+
+.optionLine {
+	justify-content: space-between;
+}
+
+/***upload***/
+.uploadContainer {
+	width: 100%;
+}
+
+.avatar {
+	min-width: 30px;
+	min-height: 30px;
+	border-radius: 50%;
+	background-color: cornflowerblue;
+	margin: 0 0 6px 10px;
+}
+
+.dropZone {
+	color: white;
+	margin: 20px 10px;
+}
+
+.buttonBarSingle {
+	justify-content: right;
+}
+
+/***MEDIA QUERIES***/
+
+@media screen and (max-width: 1200px) {
+	.bodyContainer {
+		padding: 80px 0;
+	}
+	.bottomDiv {
+		height: 100%;
+		padding-bottom: 10px;
+	}
+	.topDiv,
+	.bottomDiv {
+		display: block;
+	}
+
+	.eventInfo {
+		width: calc(100% - 80px);
+	}
+
+	.preview {
+		width: calc(100% - 40px);
+		margin-top: 35px;
+	}
+
+	.optionCard {
+		width: calc(100% - 80px);
+	}
 }

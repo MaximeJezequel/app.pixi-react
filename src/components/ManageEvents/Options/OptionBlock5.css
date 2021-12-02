@@ -1,0 +1,90 @@
+/***team***/
+
+.teamContainer {
+	padding-top: 12px;
+}
+
+.teamInput {
+	border-radius: 0.5em;
+}
+
+.teamTable {
+	border-top: 1px solid #3b4253;
+	border-bottom: 1px solid #3b4253;
+}
+
+.teamTitle {
+	width: 100%;
+	background-color: #23242e;
+	padding: 4px 0;
+}
+
+.teamRow {
+	justify-content: space-evenly;
+	width: 100%;
+	border-top: 1px solid #3b4253;
+}
+
+.circleAvatar {
+	height: 30px;
+	min-width: 30px;
+	border-radius: 50%;
+	margin: 4px;
+}
+
+.memberAvatar,
+.memberName,
+.memberCopyright,
+.memberRole,
+.memberAction,
+.guestAction {
+	padding: 1px 4px;
+}
+
+.memberAvatar {
+	width: 12%;
+	min-width: 40px;
+}
+
+.memberName {
+	width: 30%;
+}
+
+.memberCopyright {
+	width: 34%;
+}
+.memberRole {
+	width: 12%;
+}
+
+.memberAction,
+.guestAction {
+	width: 12%;
+}
+
+.guestAction:hover,
+.memberName:hover {
+	cursor: pointer;
+}
+.owner {
+	border: gold 4px solid;
+	background-color: gold;
+}
+.guest {
+	border: cyan 4px solid;
+	background-color: cyan;
+}
+
+.newGuest {
+	border: var(--red-color) 4px solid;
+	background-color: var(--red-color);
+	margin-right: 20px;
+}
+
+.invite {
+	justify-content: space-between;
+}
+
+.inviteLeft {
+	width: 65%;
+}

@@ -1,0 +1,44 @@
+/**** Upload ***/
+.uploadBar {
+	justify-content: flex-end;
+	padding: 0 20px;
+}
+
+.uploadBtn {
+	width: 120px;
+	margin: 5px 0px 5px 10px;
+	background-color: #333335;
+	/* color: #66686d; */
+	color: white;
+	border: transparent 1px solid;
+	border-radius: 6px;
+	padding: 8px 15px;
+}
+.uploadBtn span {
+	margin: 0 10px;
+	color: white;
+}
+
+.uploadSpeechBubble {
+	border-radius: 4px;
+	margin: 0;
+	padding: 3px 10px;
+	background-color: #333335;
+	color: #66686d;
+	font-size: 12px;
+	position: relative;
+	margin-right: 10px;
+}
+.uploadSpeechBubble:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 4px solid transparent;
+	border-left-color: #333335;
+	border-right: 0;
+	margin-top: -4px;
+	margin-right: -4px;
+}

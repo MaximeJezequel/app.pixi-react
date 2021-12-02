@@ -1,0 +1,30 @@
+.bubbleGrid {
+	padding: 0 5px;
+	margin-left: -10px;
+	--diameter: 15px;
+}
+
+.line1,
+.line2,
+.line3 {
+	display: flex;
+	flex-direction: row;
+}
+
+.bubble {
+	width: var(--diameter);
+	height: var(--diameter);
+	margin: 5px;
+	border-radius: 50%;
+	border: 1px solid var(--dark-grey-color);
+}
+
+.bubble:hover {
+	cursor: pointer;
+	background-color: white;
+}
+
+.bubbleactive,
+.bubbleactive:hover {
+	background-color: var(--red-color);
+}
