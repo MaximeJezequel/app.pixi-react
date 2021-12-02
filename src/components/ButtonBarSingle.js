@@ -2,18 +2,16 @@ import * as Icon from "react-feather"
 
 import "./ButtonBarSingle.css"
 
-const ButtonBarSingle = ({ btnIcon, btnText }) => {
+const ButtonBarSingle = ({ btnIcon, btnText, handleClick }) => {
 	const ButtonIcon = Icon[btnIcon]
 
 	return (
-		<div className="buttonBarSingle flex">
-			<button className="addBtn flex aic jcc">
-				<ButtonIcon size={14} />
-				<div className="flex aic jcc">
-					<span>{btnText}</span>
-				</div>
-			</button>
-		</div>
+		<button className="addBtn flex aic jcc" onClick={() => handleClick()}>
+			<ButtonIcon size={14} />
+			<div className="flex aic jcc">
+				<span>{btnText}</span>
+			</div>
+		</button>
 	)
 }
 

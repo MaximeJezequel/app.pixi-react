@@ -19,33 +19,46 @@ const Upload = () => {
 			MuiDropzoneArea: {
 				root: {
 					backgroundColor: "var(--dark-blue-color)",
-					color: "white",
 					borderColor: "var(--dark-grey-color)",
+					color: "white",
 					padding: "10px",
-					minHeight: "360px",
+					marginBottom: "12px",
+					// height: "200px",
 				},
 				icon: {
-					color: "white",
+					color: "var(--red-color)",
 				},
 			},
 			MuiDropzonePreviewList: {
 				root: {
+					width: "100%",
+					padding: "0px",
 					margin: "0px",
-					display: "flex",
-					justifyContent: "space between",
 				},
 				imageContainer: {
-					flexBasis: "calc(20% - 26px)",
-					margin: "6px",
+					flexBasis: "180px",
+					margin: "12px",
+					padding: "12px !important",
 				},
 				image: {
+					minHeight: "100px",
 					minWidth: "100px",
-					height: "auto",
+					objectFit: "contain",
+					overflow: "hidden",
 				},
 			},
 			MuiTypography: {
+				root: {
+					width: "100%",
+				},
 				body1: {
+					minWidth: "100px",
 					overflowWrap: "anywhere",
+				},
+			},
+			MuiGrid: {
+				root: {
+					width: "100%",
 				},
 			},
 		},
@@ -54,7 +67,13 @@ const Upload = () => {
 	return (
 		<div className="App">
 			<div className="bodyContainer flex col">
-				<ButtonBarSingle btnIcon="Send" btnText="Send" />
+				<div className="buttonBarSingle flex">
+					<ButtonBarSingle
+						btnIcon="Send"
+						btnText="Send"
+						handleClick={() => console.log(JSON.stringify(dropFiles))}
+					/>
+				</div>
 
 				<div className="uploadContainer">
 					<div className="uploadtitle flex aic">
@@ -71,15 +90,18 @@ const Upload = () => {
 									"image/png",
 									"image/bmp",
 								]}
-								onChange={handleChange.bind(this)}
-								showFileNames
+								onChange={(e) => handleChange(e)}
+								showFileNamesInPreview={true}
+								showPreviewsInDropzone={false}
+								showPreviews={true}
+								previewText={`${dropFiles.length} photo(s) ready to go`}
 								dropzoneText={`Drag & drop files or click here to upload`}
-								showAlerts={true}
+								showAlerts={false}
 								maxFileSize={5000000}
 								filesLimit={20}
 							/>
 						</MuiThemeProvider>
-						<p>{dropFiles.length} photo(s) ready to go</p>
+						{/* <p>{dropFiles.length} photo(s) ready to go</p> */}
 					</div>
 				</div>
 			</div>

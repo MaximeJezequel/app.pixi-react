@@ -32,8 +32,6 @@ const DashBoard = () => {
 		</div>
 	))
 
-	//
-
 	const columns = [
 		{ field: "id", headerName: "ID", width: 90 },
 		{
@@ -83,7 +81,13 @@ const DashBoard = () => {
 	return (
 		<div className="App">
 			<div className="bodyContainer flex col">
-				<ButtonBarSingle btnIcon="Plus" btnText="Add event" />
+				<div className="buttonBarSingle flex">
+					<ButtonBarSingle
+						btnIcon="Plus"
+						btnText="Add event"
+						handleClick={() => console.log("Add event")}
+					/>
+				</div>
 
 				<h2>RECENT EVENTS</h2>
 				<div className="topDiv flex row">
