@@ -103,4 +103,12 @@
 	.galleryTitle {
 		flex-direction: column-reverse;
 	}
+
+	.imgCardContainer {
+		width: calc(50% - 30px);
+	}
+
+	.imgCard {
+		width: 100%;
+	}
 }
