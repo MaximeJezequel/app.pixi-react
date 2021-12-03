@@ -16,11 +16,11 @@ const NavBar = () => {
 				<NavLink to={"/upload"}>
 					<Icon.Upload size={14} />
 				</NavLink>
-				<NavLink to={"/team"}>
-					<Icon.Users size={14} />
-				</NavLink>
 				<NavLink to={"/gallery"}>
 					<Icon.Image size={14} />
+				</NavLink>
+				<NavLink to={"/team"}>
+					<Icon.Users size={14} />
 				</NavLink>
 			</div>
 

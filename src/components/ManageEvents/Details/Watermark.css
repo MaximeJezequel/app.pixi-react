@@ -25,6 +25,9 @@
 	outline: none;
 	width: 90%;
 }
+.importedFileName:hover {
+	cursor: pointer;
+}
 
 .importFileBtn {
 	padding: 10px 20px;
@@ -80,6 +83,10 @@
 	background-color: var(--dark-grey-color);
 	color: white;
 	border-radius: 3px;
+}
+
+.boxSize:hover {
+	cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {

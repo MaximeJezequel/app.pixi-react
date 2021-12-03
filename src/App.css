@@ -109,42 +109,6 @@ h2 {
 	justify-content: right;
 }
 
-/***Gallery***/
-
-.gallery {
-	flex-wrap: wrap;
-	width: 100%;
-	padding: 10px;
-}
-.imgCardContainer {
-	margin: 10px;
-	width: 200px;
-	height: 133px;
-	position: relative;
-}
-
-.imgCard {
-	width: 200px;
-	height: 133px;
-}
-
-.galleryMode {
-	object-fit: contain;
-	object-fit: cover;
-}
-
-.galleryRadio {
-	position: absolute;
-	width: var(--diameter);
-	height: var(--diameter);
-	background-color: transparent;
-	border-radius: 50%;
-	border: 2px solid white;
-	right: 5px;
-	bottom: 5px;
-	/* z-index: 5; */
-}
-
 /***MEDIA QUERIES***/
 
 @media screen and (max-width: 1200px) {
@@ -171,5 +135,15 @@ h2 {
 
 	.optionCard {
 		width: calc(100% - 80px);
+	}
+
+	.buttonBarSingle {
+		position: fixed;
+		justify-content: center;
+		bottom: 20px;
+		left: 0;
+		right: 0;
+		z-index: 15;
+		background-color: rgba(150, 150, 150, 0.5);
 	}
 }
