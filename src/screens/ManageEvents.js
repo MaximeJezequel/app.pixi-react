@@ -8,7 +8,7 @@ import OptionBlock3 from "../components/ManageEvents/Options/OptionBlock3"
 import OptionBlock4 from "../components/ManageEvents/Options/OptionBlock4"
 import OptionBlock5 from "../components/ManageEvents/Options/OptionBlock5"
 import Preview from "../components/ManageEvents/Details/Preview"
-import UploadBar from "../components/ManageEvents/UploadBar"
+import UploadBar from "../components/ManageEvents/Details/UploadBar"
 import Watermark from "../components/ManageEvents/Details/Watermark"
 
 import image from "../assets/modele.jpg"
