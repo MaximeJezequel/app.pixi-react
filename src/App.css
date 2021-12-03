@@ -105,26 +105,44 @@ h2 {
 	justify-content: space-between;
 }
 
-/***upload***/
-.uploadContainer {
-	width: 100%;
-}
-
-.avatar {
-	min-width: 30px;
-	min-height: 30px;
-	border-radius: 50%;
-	background-color: cornflowerblue;
-	margin: 0 0 6px 10px;
-}
-
-.dropZone {
-	color: white;
-	margin: 20px 10px;
-}
-
 .buttonBarSingle {
 	justify-content: right;
+}
+
+/***Gallery***/
+
+.gallery {
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 10px;
+}
+.imgCardContainer {
+	margin: 10px;
+	width: 200px;
+	height: 133px;
+	position: relative;
+}
+
+.imgCard {
+	width: 200px;
+	height: 133px;
+}
+
+.galleryMode {
+	object-fit: contain;
+	object-fit: cover;
+}
+
+.galleryRadio {
+	position: absolute;
+	width: var(--diameter);
+	height: var(--diameter);
+	background-color: transparent;
+	border-radius: 50%;
+	border: 2px solid white;
+	right: 5px;
+	bottom: 5px;
+	/* z-index: 5; */
 }
 
 /***MEDIA QUERIES***/
