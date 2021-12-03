@@ -6,6 +6,7 @@ import { MuiThemeProvider, createTheme } from "@material-ui/core/styles"
 import ButtonBarSingle from "../components/ButtonBarSingle"
 
 import "../App.css"
+import "./Upload.css"
 
 const Upload = () => {
 	const [dropFiles, setDropFiles] = useState([])
@@ -18,12 +19,9 @@ const Upload = () => {
 	useEffect(() => {
 		function reportWindowSize() {
 			setWindowWidth(window.innerWidth)
-			// console.log(window.innerWidth)
 		}
 		// Trigger this function on resize
 		window.addEventListener("resize", reportWindowSize)
-		//  Cleanup for componentWillUnmount
-		return () => window.removeEventListener("resize", reportWindowSize)
 	}, [])
 
 	let picWidth =
@@ -32,7 +30,7 @@ const Upload = () => {
 	let uploadMsg =
 		windowWidth < 1024
 			? "Click here to upload files"
-			: "Drag & drop files or click here to upload"
+			: "Drag & drop files here or click to upload"
 
 	const theme = createTheme({
 		overrides: {
@@ -111,13 +109,12 @@ const Upload = () => {
 								showPreviewsInDropzone={false}
 								showPreviews={true}
 								previewText={`${dropFiles.length} photo(s) ready to go`}
-								// dropzoneText={uploadMsg}
+								dropzoneText={uploadMsg}
 								showAlerts={false}
 								maxFileSize={5000000}
 								filesLimit={20}
 							/>
 						</MuiThemeProvider>
-						{/* <p>{dropFiles.length} photo(s) ready to go</p> */}
 					</div>
 				</div>
 			</div>

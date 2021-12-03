@@ -1,0 +1,17 @@
+/***upload***/
+.uploadContainer {
+	width: 100%;
+}
+
+.avatar {
+	min-width: 30px;
+	min-height: 30px;
+	border-radius: 50%;
+	background-color: cornflowerblue;
+	margin: 0 0 6px 10px;
+}
+
+.dropZone {
+	color: white;
+	margin: 20px 10px;
+}
