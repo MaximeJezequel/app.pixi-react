@@ -1,5 +1,5 @@
 import React from "react"
-import { useState } from "react"
+import { useState, Link } from "react"
 import * as Icon from "react-feather"
 
 import ButtonBarSingle from "../components/ButtonBarSingle"
@@ -10,7 +10,7 @@ import "./Gallery.css"
 const Upload = () => {
 	const [displayMode, setDisplayMode] = useState("square")
 	const [room, setRoom] = useState("0")
-	const [picsToDownload, setPicsToDownload] = useState([])
+	const [picsToDownload, setPicsToDownload] = useState([0])
 	const [picsResolution, setPicsResolution] = useState("Original")
 
 	const handleDisplayChange = (e) => {
@@ -23,12 +23,18 @@ const Upload = () => {
 	}
 	const handleRoomChange = (e) => {
 		setRoom(e)
+		setPicsToDownload([])
 		console.log("room", e)
 	}
 
 	const handlePicSelect = (e) => {
-		// setDisplayMode(e)
-		console.log("select", e)
+		if (picsToDownload.includes(e)) {
+			setPicsToDownload(picsToDownload.filter((pic) => pic !== e))
+			console.log("select", picsToDownload)
+		} else {
+			setPicsToDownload((prevState) => [...prevState, e])
+			console.log("select", picsToDownload)
+		}
 	}
 
 	const imgList = [
@@ -64,7 +70,18 @@ const Upload = () => {
 					<ButtonBarSingle
 						btnIcon="Download"
 						btnText="Download"
-						handleClick={() => console.log("Download clicked")}
+						handleClick={() =>
+							// console.log(
+							// 	"Download",
+							// 	picsToDownload.sort((a, b) => a - b)
+							// )
+							console.log(
+								"Download",
+								picsToDownload
+									.sort((a, b) => a - b)
+									.map((pic) => imgList[pic].name)
+							)
+						}
 					/>
 				</div>
 
@@ -109,11 +126,13 @@ const Upload = () => {
 					<div className="gallery flex">
 						{imgList.map((img, index) => (
 							<div
+								key={index}
 								className={
 									room === img.room || room === "0"
 										? "imgCardContainer"
 										: "dispNone"
 								}
+								onClick={() => handlePicSelect(index)}
 							>
 								<img
 									className={`imgCard ${displayMode}Mode`}
@@ -121,7 +140,14 @@ const Upload = () => {
 									src={`tmp/${img.name}`}
 									alt={img.name}
 								/>
-								<div id={`gallery${index}`} className="galleryRadio"></div>
+								<div
+									id={`gallery${index}`}
+									className={
+										picsToDownload.includes(index)
+											? "galleryRadio included"
+											: "galleryRadio"
+									}
+								></div>
 							</div>
 						))}
 					</div>
