@@ -16,7 +16,7 @@ const myEvents = [
 	{
 		id: 3,
 		eventName: "WEB2DAY",
-		team: ["R", "W"],
+		team: ["JD", "WJ"],
 		role: "Guest",
 		actions: "...",
 	},
