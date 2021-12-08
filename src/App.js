@@ -4,7 +4,7 @@ import DashBoard from "./screens/Dashboard"
 import Gallery from "./screens/Gallery"
 import ManageEvents from "./screens/ManageEvents"
 import ManageTeam from "./screens/ManageTeam"
-import NavBar from "./components/NavBar"
+import NavBar from "./screens/NavBar"
 import Upload from "./screens/Upload"
 
 import "./App.css"

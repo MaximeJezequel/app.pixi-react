@@ -6,7 +6,7 @@ import { MuiThemeProvider, createTheme } from "@material-ui/core/styles"
 import ButtonBarSingle from "../components/ButtonBarSingle"
 
 import "../App.css"
-import "./Upload.css"
+import "../styles/Upload.css"
 
 const Upload = () => {
 	const [dropFiles, setDropFiles] = useState([])
