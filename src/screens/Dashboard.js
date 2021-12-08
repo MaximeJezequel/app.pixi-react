@@ -15,7 +15,7 @@ import "react-alice-carousel/lib/alice-carousel.css"
 const DashBoard = () => {
 	let maxEvents = 4
 	const [pageSize, setPageSize] = useState(10)
-	const [allEvents, setAllEvents] = useState(myEvents)
+	const [allEvents, setAllEvents] = useState("")
 
 	const handleChangePageSize = (e) => {
 		setPageSize(e)
@@ -75,9 +75,13 @@ const DashBoard = () => {
 		},
 	]
 
-	const rows = myEvents
+	const rows = myEvents.filter(
+		(d) =>
+			allEvents === "" ||
+			d.eventName.toLowerCase().includes(allEvents.toLowerCase())
+	)
 
-	const lastEvents = rows.map((event) => event.eventName)
+	const lastEvents = myEvents.map((event) => event.eventName)
 
 	const recentEvents = lastEvents.slice(0, maxEvents).map((event, index) => (
 		<div key={index} className={`recentEventCard ev${index + 1}`}>
@@ -131,7 +135,8 @@ const DashBoard = () => {
 									className="searchInput"
 									type="text"
 									placeholder="Search"
-									onChange={(e) => console.log("search:", e.target.value)}
+									value={allEvents}
+									onChange={(e) => setAllEvents(e.target.value)}
 								/>
 							</div>
 						</div>
@@ -152,13 +157,13 @@ const DashBoard = () => {
 									color: "white",
 								},
 								"& .MuiDataGrid-footerContainer": {
-									backgroundColor: "green",
+									// backgroundColor: "grey",
 								},
 								"& .MuiDataGrid-iconSeparator": {
 									display: "none",
 								},
 								"& .MuiToolbar-root": {
-									color: "yellow",
+									color: "white",
 								},
 								"& .MuiSvgIcon-root": {
 									color: "white",
