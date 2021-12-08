@@ -4,20 +4,20 @@ import * as Icon from "react-feather"
 import logo from "../assets/logo-pixilive.png"
 
 import "../App.css"
-import "./NavBar.css"
+import "../styles/NavBar.css"
 
 const NavBar = () => {
 	return (
 		<div className="navbar flex aic">
 			<div className="navContainer flex jcc aic">
 				<NavLink to={"/events"}>
-					<Icon.Calendar size={14} />
+					<Icon.Edit size={14} />
 				</NavLink>
 				<NavLink to={"/upload"}>
-					<Icon.Upload size={14} />
+					<Icon.Camera size={14} />
 				</NavLink>
 				<NavLink to={"/gallery"}>
-					<Icon.Image size={14} />
+					<Icon.Eye size={14} />
 				</NavLink>
 				<NavLink to={"/team"}>
 					<Icon.Users size={14} />

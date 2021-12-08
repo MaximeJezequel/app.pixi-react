@@ -5,7 +5,7 @@ import * as Icon from "react-feather"
 import ButtonBarSingle from "../components/ButtonBarSingle"
 
 import "../App.css"
-import "./Gallery.css"
+import "../styles/Gallery.css"
 
 const Upload = () => {
 	const [displayMode, setDisplayMode] = useState("square")

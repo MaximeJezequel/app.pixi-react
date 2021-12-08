@@ -1,3 +1,5 @@
+/*** RECENT EVENTS ***/
+
 .recentEventCard {
 	/* width: calc(25% - 20px); */
 	width: calc(100% - 20px);
@@ -9,33 +11,6 @@
 .recentEventCard:hover {
 	cursor: pointer;
 }
-
-.eventTable {
-	background-color: var(--dark-blue-color);
-	width: calc(100% - 20px);
-	height: 800px;
-	margin: 10px;
-}
-
-.tableAvatar {
-	border-radius: 50%;
-	background-color: #2ac871;
-	width: 32px;
-	height: 32px;
-}
-.tableMate {
-	border-radius: 50%;
-	background-color: #756af0;
-	width: 32px;
-	height: 32px;
-}
-
-/* .dashTableHead {
-	background-color: var(--dark-nav);
-}
-.dashTableBody {
-	background-color: var(--dark-blue-color);
-} */
 
 .ev1 {
 	/* background-color: violet; */
@@ -82,12 +57,58 @@
 	);
 }
 
-.eventRow {
+/*** ALL EVENTS ***/
+
+.eventTable {
+	background-color: var(--dark-blue-color);
+	width: calc(100% - 20px);
+	height: 800px;
+	margin: 10px;
+}
+
+.tableLabel {
+	padding: 0 10px 4px 10px;
+}
+
+.pageSizeSelect {
+	cursor: inherit;
+	width: 100%;
+	padding: 10px;
+	background-color: var(--dark-blue-color);
+	border: 1px solid var(--dark-grey-color);
+	color: white;
+	border-radius: 0.5em;
+}
+
+.searchInput {
+	min-width: 100px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px solid var(--dark-grey-color);
+	background-color: transparent;
+	color: var(--dark-text-regular);
+	border-radius: 0.5em;
+}
+
+.tableAvatar {
+	border-radius: 50%;
+	background-color: #2ac871;
+	width: 32px;
+	height: 32px;
+}
+.tableMate {
+	border-radius: 50%;
+	background-color: #756af0;
+	width: 32px;
+	height: 32px;
+}
+
+/* .eventRow {
 	padding: 10px;
 	width: calc(100% - 20px);
 	background-color: #66686d;
 	border-top: 1px solid #0e0e15;
-}
+} */
 
 /***MEDIA QUERIES***/
 
