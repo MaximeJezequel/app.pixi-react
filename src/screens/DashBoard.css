@@ -17,6 +17,19 @@
 	margin: 10px;
 }
 
+.tableAvatar {
+	border-radius: 50%;
+	background-color: #2ac871;
+	width: 32px;
+	height: 32px;
+}
+.tableMate {
+	border-radius: 50%;
+	background-color: #756af0;
+	width: 32px;
+	height: 32px;
+}
+
 /* .dashTableHead {
 	background-color: var(--dark-nav);
 }
