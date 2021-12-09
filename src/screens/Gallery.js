@@ -71,10 +71,6 @@ const Upload = () => {
 						btnIcon="Download"
 						btnText="Download"
 						handleClick={() =>
-							// console.log(
-							// 	"Download",
-							// 	picsToDownload.sort((a, b) => a - b)
-							// )
 							console.log(
 								"Download",
 								picsToDownload
