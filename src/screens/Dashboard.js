@@ -1,8 +1,10 @@
 import React from "react"
 import { useState } from "react"
-import * as Icon from "react-feather"
-import { DataGrid } from "@mui/x-data-grid"
 import AliceCarousel from "react-alice-carousel"
+import Avatar from "@mui/material/Avatar"
+import AvatarGroup from "@mui/material/AvatarGroup"
+import { DataGrid } from "@mui/x-data-grid"
+import * as Icon from "react-feather"
 
 import ButtonBarSingle from "../components/ButtonBarSingle"
 
@@ -35,7 +37,9 @@ const DashBoard = () => {
 			flex: 0.1,
 			align: "left",
 			renderCell: (params) => (
-				<div className="tableAvatar flex aic jcc">{params.value}</div>
+				<div className={`tableAvatar ev${params.value} flex aic jcc`}>
+					{params.value}
+				</div>
 			),
 		},
 		{
@@ -53,7 +57,20 @@ const DashBoard = () => {
 			flex: 0.3,
 			align: "left",
 			renderCell: (params) => (
-				<div className="tableMate flex aic jcc">{params.value}</div>
+				<AvatarGroup max={6}>
+					{params.value.map((avatar, index) => (
+						<Avatar
+							className={`tableMate blackBorder ev${index + 1}`}
+							key={index}
+							alt={avatar}
+							src={`tmp/Avatars/${avatar}.png`}
+							sx={{
+								height: "32px",
+								width: "32px",
+							}}
+						/>
+					))}
+				</AvatarGroup>
 			),
 		},
 		{
@@ -167,6 +184,9 @@ const DashBoard = () => {
 								},
 								"& .MuiSvgIcon-root": {
 									color: "white",
+								},
+								"& .MuiAvatar-circular": {
+									border: "2px solid var(--main-bg-color)",
 								},
 							}}
 						/>

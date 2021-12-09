@@ -103,13 +103,6 @@
 	height: 32px;
 }
 
-/* .eventRow {
-	padding: 10px;
-	width: calc(100% - 20px);
-	background-color: #66686d;
-	border-top: 1px solid #0e0e15;
-} */
-
 /***MEDIA QUERIES***/
 
 @media screen and (max-width: 1200px) {
