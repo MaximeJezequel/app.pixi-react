@@ -19,9 +19,12 @@ const NavBar = () => {
 				<NavLink to={"/gallery"}>
 					<Icon.Eye size={14} />
 				</NavLink>
-				<NavLink to={"/team"}>
-					<Icon.Users size={14} />
+				<NavLink to={"/login"}>
+					<Icon.LogIn size={14} />
 				</NavLink>
+				{/* <NavLink to={"/team"}>
+					<Icon.Users size={14} />
+				</NavLink> */}
 			</div>
 
 			<div className="logoContainer flex jcc aic">

@@ -1,5 +1,6 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import axios from "axios"
 import AliceCarousel from "react-alice-carousel"
 import Avatar from "@mui/material/Avatar"
 import AvatarGroup from "@mui/material/AvatarGroup"
@@ -19,6 +20,7 @@ const DashBoard = () => {
 	let maxEvents = 4
 	const [pageSize, setPageSize] = useState(10)
 	const [allEvents, setAllEvents] = useState("")
+	const [eventRows, setEventRows] = useState([])
 
 	const handleChangePageSize = (e) => {
 		setPageSize(e)
@@ -99,11 +101,29 @@ const DashBoard = () => {
 		},
 	]
 
-	const rows = myEvents.filter(
+	const rows = eventRows.filter(
 		(d) =>
 			allEvents === "" ||
 			d.eventName.toLowerCase().includes(allEvents.toLowerCase())
 	)
+	// const rows = myEvents.filter(
+	// 	(d) =>
+	// 		allEvents === "" ||
+	// 		d.eventName.toLowerCase().includes(allEvents.toLowerCase())
+	// )
+
+	/*** AXIOS ***/
+	useEffect(() => {
+		const getEvents = () => {
+			axios
+				.get(`${process.env.REACT_API_BASE_URL}/events`)
+				// .get(`${process.env.REACT_APP_URL_API}/events/`)
+				.then((results) => setEventRows(results.data))
+		}
+		getEvents()
+	}, [])
+
+	/*** AXIOS ***/
 
 	const lastEvents = myEvents.map((event) => event.eventName)
 
@@ -191,9 +211,6 @@ const DashBoard = () => {
 								},
 								"& .MuiSvgIcon-root": {
 									color: "white",
-								},
-								"& .MuiAvatar-root": {
-									border: "2px solid ",
 								},
 							}}
 						/>

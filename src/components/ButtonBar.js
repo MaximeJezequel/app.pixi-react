@@ -2,7 +2,7 @@ import * as Icon from "react-feather"
 
 import "./ButtonBar.css"
 
-const ButtonBar = () => {
+const ButtonBar = ({ handleClickSave }) => {
 	return (
 		<div className="buttonBar flex">
 			<button className="deleteBtn flex aic jcc">
@@ -14,7 +14,10 @@ const ButtonBar = () => {
 			<button className="cancelBtn flex aic jcc">
 				<Icon.X size={14} /> <span>Cancel</span>
 			</button>
-			<button className="saveBtn flex aic jcc">
+			<button
+				className="saveBtn flex aic jcc"
+				onClick={() => handleClickSave()}
+			>
 				<Icon.Save size={14} /> <span>Save</span>
 			</button>
 		</div>

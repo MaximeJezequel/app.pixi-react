@@ -1,5 +1,6 @@
 import React from "react"
 import { useState, useRef } from "react"
+import axios from "axios"
 
 import ButtonBar from "../components/ButtonBar"
 import OptionBlock1 from "../components/ManageEvents/Options/OptionBlock1"
@@ -14,6 +15,7 @@ import Watermark from "../components/ManageEvents/Details/Watermark"
 import image from "../assets/modele.jpg"
 
 function ManageEvents() {
+	const [eventName, setEventName] = useState("") //event name
 	const [watermarkFile, setWatermarkFile] = useState("") //watermark filename
 	const [bubbleGridWatermark, setBubbleGridWatermark] = useState("3-3") //initial position of watermark
 	const [slider1, setSlider1] = useState(100) //percent
@@ -31,14 +33,27 @@ function ManageEvents() {
 		inputFile.current.click()
 	}
 
-	const handleInputChange = (e) => {
-		setWatermarkFile(e)
+	const handleWatermarkChange = (e) => {
+		console.log("watermark", e.target.value)
+		setWatermarkFile(e.target.value)
+	}
+
+	const addEvent = () => {
+		const newEvent = {
+			eventName: eventName,
+			watermarkFile: watermarkFile,
+		}
+		console.log("newEvent : ", newEvent)
+		axios.post(`https://ljahier.loca.lt/events`, newEvent)
+		// 	.then((results) => {
+		// 	localStorage.setItem("sessionToken", results.data.sessionToken)
+		// })
 	}
 
 	return (
 		<div className="App">
 			<div className="bodyContainer flex col">
-				<ButtonBar />
+				<ButtonBar handleClickSave={() => addEvent()} />
 				<h2>EVENT DETAILS</h2>
 				<div className="topDiv flex jcsb">
 					<div className="eventInfo flex col">
@@ -47,6 +62,7 @@ function ManageEvents() {
 							type="text"
 							placeholder="Event name"
 							className="inputEvent"
+							onChange={(e) => setEventName(e.target.value)}
 						/>
 
 						<Watermark
@@ -61,7 +77,7 @@ function ManageEvents() {
 							inputFile={inputFile}
 							watermarkFile={watermarkFile}
 							setWatermarkFile={setWatermarkFile}
-							handleUploadChange={handleInputChange}
+							handleUploadChange={handleWatermarkChange}
 							handleUploadClick={handleUploadClick}
 						/>
 					</div>
