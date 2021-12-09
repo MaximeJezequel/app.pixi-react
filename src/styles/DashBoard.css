@@ -80,8 +80,18 @@
 	border-radius: 0.5em;
 }
 
+.eventSearchLeft {
+	justify-content: left;
+	padding-right: 10px;
+	min-width: 120px;
+}
+
+.eventSearchRight {
+	justify-content: right;
+	min-width: 120px;
+}
+
 .searchInput {
-	min-width: 100px;
 	padding: 10px;
 	margin: 10px;
 	border: 1px solid var(--dark-grey-color);
@@ -92,13 +102,7 @@
 
 .tableAvatar {
 	border-radius: 50%;
-	background-color: #2ac871;
-	width: 32px;
-	height: 32px;
-}
-.tableMate {
-	border-radius: 50%;
-	background-color: #756af0;
+	background-color: grey;
 	width: 32px;
 	height: 32px;
 }
@@ -106,4 +110,7 @@
 /***MEDIA QUERIES***/
 
 @media screen and (max-width: 1200px) {
+	.searchInput {
+		max-width: 50%;
+	}
 }
