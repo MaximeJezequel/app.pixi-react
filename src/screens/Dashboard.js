@@ -4,6 +4,7 @@ import AliceCarousel from "react-alice-carousel"
 import Avatar from "@mui/material/Avatar"
 import AvatarGroup from "@mui/material/AvatarGroup"
 import { DataGrid } from "@mui/x-data-grid"
+import useMediaQuery from "@mui/material/useMediaQuery"
 import * as Icon from "react-feather"
 
 import ButtonBarSingle from "../components/ButtonBarSingle"
@@ -11,7 +12,7 @@ import ButtonBarSingle from "../components/ButtonBarSingle"
 import myEvents from "../data/myEvents"
 
 import "../App.css"
-import "./DashBoard.css"
+import "../styles/DashBoard.css"
 import "react-alice-carousel/lib/alice-carousel.css"
 
 const DashBoard = () => {
@@ -28,13 +29,16 @@ const DashBoard = () => {
 		1024: { items: 4 },
 	}
 
+	const matches = useMediaQuery("(max-width:800px)")
+
 	const columns = [
 		{
 			field: "id",
 			headerName: "ID",
 			headerClassName: "themeHeader",
 			headerAlign: "left",
-			flex: 0.1,
+			width: 60,
+			// flex: 0.1,
 			align: "left",
 			renderCell: (params) => (
 				<div className={`tableAvatar ev${params.value} flex aic jcc`}>
@@ -54,10 +58,10 @@ const DashBoard = () => {
 			headerName: "TEAM",
 			headerClassName: "themeHeader",
 			headerAlign: "left",
-			flex: 0.3,
+			flex: 0.4,
 			align: "left",
 			renderCell: (params) => (
-				<AvatarGroup max={6}>
+				<AvatarGroup max={5}>
 					{params.value.map((avatar, index) => (
 						<Avatar
 							className={`tableMate blackBorder ev${index + 1}`}
@@ -72,6 +76,7 @@ const DashBoard = () => {
 					))}
 				</AvatarGroup>
 			),
+			hide: matches,
 		},
 		{
 			field: "role",
@@ -80,13 +85,15 @@ const DashBoard = () => {
 			headerAlign: "center",
 			flex: 0.2,
 			align: "center",
+			hide: matches,
 		},
 		{
 			field: "actions",
 			headerName: "ACTIONS",
 			headerClassName: "themeHeader",
 			headerAlign: "center",
-			flex: 0.2,
+			width: 150,
+			// flex: 0.2,
 			align: "center",
 			renderCell: (params) => <div>{params.value}</div>,
 		},
@@ -132,7 +139,7 @@ const DashBoard = () => {
 				<div className="bottomDiv flex col">
 					<div className="eventTable ">
 						<div className="eventSearch flex aic jcsb">
-							<div className="flex aic">
+							<div className="eventSearchLeft flex aic">
 								<div className="tableLabel flex aic jcc">Show</div>
 								<select
 									className="pageSizeSelect"
@@ -146,7 +153,7 @@ const DashBoard = () => {
 									<option value={20}>20</option>
 								</select>
 							</div>
-							<div className="flex aic">
+							<div className="eventSearchRight flex aic">
 								<Icon.Search size={20} color={"gray"} />
 								<input
 									className="searchInput"
@@ -185,8 +192,8 @@ const DashBoard = () => {
 								"& .MuiSvgIcon-root": {
 									color: "white",
 								},
-								"& .MuiAvatar-circular": {
-									border: "2px solid var(--main-bg-color)",
+								"& .MuiAvatar-root": {
+									border: "2px solid ",
 								},
 							}}
 						/>
