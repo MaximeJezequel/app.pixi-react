@@ -1,0 +1,30 @@
+/***Login***/
+.login {
+	padding: 10px;
+}
+
+.login input {
+	cursor: inherit;
+	width: calc(100% - 20px);
+	height: 26px;
+	padding: 10px;
+	background-color: var(--dark-blue-color);
+	border: 1px solid var(--dark-grey-color);
+	color: white;
+	border-radius: 7px;
+}
+
+.loginBtn,
+.registerBtn {
+	width: 45%;
+	padding: 10px;
+	margin-top: 12px;
+	background-color: var(--red-color);
+	color: white;
+	border: transparent 1px solid;
+	border-radius: 6px;
+}
+
+.loginBtn:hover {
+	cursor: pointer;
+}

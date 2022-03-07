@@ -44,10 +44,11 @@ function ManageEvents() {
 			watermarkFile: watermarkFile,
 		}
 		console.log("newEvent : ", newEvent)
-		axios.post(`https://ljahier.loca.lt/events`, newEvent)
-		// 	.then((results) => {
-		// 	localStorage.setItem("sessionToken", results.data.sessionToken)
-		// })
+		axios.post(`${process.env.REACT_APP_URL_API}/events`, newEvent, {
+			headers: {
+				Authorization: `Basic ${localStorage.getItem("sessionToken")}`,
+			},
+		})
 	}
 
 	return (

@@ -7,26 +7,40 @@ import "../App.css"
 import "../styles/Login.css"
 
 const Login = () => {
+	const [firstName, setFirstName] = useState("")
+	const [lastName, setLastName] = useState("")
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
 
-	const handleClickLogin = () => {
-		const loginData = {
+	const handleClickRegister = () => {
+		const registerData = {
+			firstName: firstName,
+			lastName: lastName,
 			email: email,
 			password: password,
 		}
-		axios
-			.post(`${process.env.REACT_APP_URL_API}/login`, loginData)
-			.then((results) => {
-				localStorage.setItem("sessionToken", results.data.sessionToken)
-			})
+		console.log(registerData)
+
+		axios.post(`${process.env.REACT_APP_URL_API}/register`, registerData)
 	}
 
 	return (
 		<div className="App">
 			<div className="bodyContainer">
-				<h2>LOGIN</h2>
+				<h2>REGISTER</h2>
 				<div className="login flex col">
+					<input
+						type="text"
+						placeholder="first name"
+						onChange={(e) => setFirstName(e.target.value)}
+					/>
+
+					<input
+						type="text"
+						placeholder="last name"
+						onChange={(e) => setLastName(e.target.value)}
+					/>
+
 					<input
 						type="email"
 						placeholder="email"
@@ -38,13 +52,15 @@ const Login = () => {
 						placeholder="password"
 						onChange={(e) => setPassword(e.target.value)}
 					/>
-					<div>Forgot password?</div>
 					<div className="button flex col aic jcc">
-						<button className="loginBtn" onClick={() => handleClickLogin()}>
-							Login
+						<button
+							className="registerBtn"
+							onClick={() => handleClickRegister()}
+						>
+							Register
 						</button>
 						<div>
-							Not registered? <Link to="/register">Create an account!</Link>
+							Already have an account? <Link to="/login">Log in!</Link>
 						</div>
 					</div>
 				</div>
