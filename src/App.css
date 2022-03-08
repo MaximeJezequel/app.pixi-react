@@ -109,6 +109,10 @@ h2 {
 	justify-content: right;
 }
 
+.greyHeader {
+	color: red;
+}
+
 /***MEDIA QUERIES***/
 
 @media screen and (max-width: 1200px) {
@@ -140,10 +144,10 @@ h2 {
 	.buttonBarSingle {
 		position: fixed;
 		justify-content: center;
-		bottom: 20px;
+		bottom: 0px;
 		left: 0;
 		right: 0;
 		z-index: 15;
-		background-color: rgba(150, 150, 150, 0.5);
+		background-color: var(--main-bg-color);
 	}
 }

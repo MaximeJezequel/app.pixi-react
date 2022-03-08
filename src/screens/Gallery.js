@@ -122,7 +122,7 @@ const Upload = () => {
 					<div className="gallery flex">
 						{imgList.map((img, index) => (
 							<div
-								key={index}
+								key={img.name}
 								className={
 									room === img.room || room === "0"
 										? "imgCardContainer"

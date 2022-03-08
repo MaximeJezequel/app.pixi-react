@@ -1,5 +1,6 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import axios from "axios"
 import AliceCarousel from "react-alice-carousel"
 import Avatar from "@mui/material/Avatar"
 import AvatarGroup from "@mui/material/AvatarGroup"
@@ -19,6 +20,7 @@ const DashBoard = () => {
 	let maxEvents = 4
 	const [pageSize, setPageSize] = useState(10)
 	const [allEvents, setAllEvents] = useState("")
+	const [eventRows, setEventRows] = useState([])
 
 	const handleChangePageSize = (e) => {
 		setPageSize(e)
@@ -35,7 +37,7 @@ const DashBoard = () => {
 		{
 			field: "id",
 			headerName: "ID",
-			headerClassName: "themeHeader",
+			headerClassName: "themeHeader invisibleHeader",
 			headerAlign: "left",
 			width: 60,
 			// flex: 0.1,
@@ -82,28 +84,50 @@ const DashBoard = () => {
 			field: "role",
 			headerName: "ROLE",
 			headerClassName: "themeHeader",
-			headerAlign: "center",
-			flex: 0.2,
-			align: "center",
+			headerAlign: "left",
+			width: 150,
+			align: "left",
 			hide: matches,
 		},
 		{
 			field: "actions",
 			headerName: "ACTIONS",
 			headerClassName: "themeHeader",
-			headerAlign: "center",
-			width: 150,
-			// flex: 0.2,
-			align: "center",
-			renderCell: (params) => <div>{params.value}</div>,
+			headerAlign: "left",
+			width: 100,
+			align: "left",
+			renderCell: (params) => <div className="actions">{params.value}</div>,
 		},
 	]
 
+	// const rows = eventRows.filter(
+	// 	(d) =>
+	// 		allEvents === "" ||
+	// 		d.eventName.toLowerCase().includes(allEvents.toLowerCase())
+	// )
 	const rows = myEvents.filter(
 		(d) =>
 			allEvents === "" ||
 			d.eventName.toLowerCase().includes(allEvents.toLowerCase())
 	)
+
+	/*** AXIOS ***/
+	useEffect(() => {
+		const getEvents = async () => {
+			await axios
+				.get(`${process.env.REACT_APP_URL_API}/events`, {
+					headers: {
+						Authorization: `Basic ${localStorage.getItem("sessionToken")}`,
+					},
+				})
+
+				.then((results) => console.log(results.data))
+			// .then((results) => setEventRows(results.data.events))
+		}
+		getEvents()
+	}, [])
+
+	/*** AXIOS ***/
 
 	const lastEvents = myEvents.map((event) => event.eventName)
 
@@ -177,9 +201,12 @@ const DashBoard = () => {
 								"& .themeHeader": {
 									backgroundColor: "var(--dark-grey-color)",
 								},
-								"& .MuiDataGrid-columnHeader": {
-									color: "white",
+								"& .invisibleHeader": {
+									color: "var(--dark-grey-color)",
 								},
+								// "& .MuiDataGrid-columnHeader": {
+								// 	color: "white",
+								// },
 								"& .MuiDataGrid-footerContainer": {
 									// backgroundColor: "grey",
 								},
@@ -191,9 +218,6 @@ const DashBoard = () => {
 								},
 								"& .MuiSvgIcon-root": {
 									color: "white",
-								},
-								"& .MuiAvatar-root": {
-									border: "2px solid ",
 								},
 							}}
 						/>

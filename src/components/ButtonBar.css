@@ -42,10 +42,10 @@
 	.buttonBar {
 		position: fixed;
 		justify-content: center;
-		bottom: 20px;
+		bottom: 0px;
 		left: 0;
 		right: 0;
-		z-index: 10;
-		background-color: rgba(150, 150, 150, 0.5);
+		z-index: 15;
+		background-color: var(--main-bg-color);
 	}
 }

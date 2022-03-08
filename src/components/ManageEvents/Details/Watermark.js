@@ -16,7 +16,6 @@ const Watermark = ({
 	setBubbleValue,
 	inputFile,
 	watermarkFile,
-	setWatermarkFile,
 	handleUploadChange,
 	handleUploadClick,
 }) => {
