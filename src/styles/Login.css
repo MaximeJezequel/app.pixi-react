@@ -1,30 +1,68 @@
 /***Login***/
+.login-auth-left {
+  width: 0%;
+}
+
+.login-auth-left img {
+  width: calc(100% - 12px);
+  padding-right: 12px;
+}
+
+.login-auth-right {
+  width: 100%;
+  background-image: url(../assets/modele.jpg);
+}
+
 .login {
-	padding: 10px;
+  padding: 10px;
 }
 
 .login input {
-	cursor: inherit;
-	width: calc(100% - 20px);
-	height: 26px;
-	padding: 10px;
-	background-color: var(--dark-blue-color);
-	border: 1px solid var(--dark-grey-color);
-	color: white;
-	border-radius: 7px;
+  cursor: inherit;
+  width: calc(100% - 20px);
+  height: 26px;
+  padding: 10px;
+  background-color: var(--dark-blue-color);
+  border: 1px solid var(--dark-grey-color);
+  color: var(--dark-text-regular);
+  border-radius: 7px;
+  margin-bottom: 15px;
 }
 
 .loginBtn,
 .registerBtn {
-	width: 45%;
-	padding: 10px;
-	margin-top: 12px;
-	background-color: var(--red-color);
-	color: white;
-	border: transparent 1px solid;
-	border-radius: 6px;
+  width: 45%;
+  padding: 10px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  background-color: var(--red-color);
+  color: var(--dark-text-regular);
+  border: transparent 1px solid;
+  border-radius: 6px;
 }
 
 .loginBtn:hover {
-	cursor: pointer;
+  cursor: pointer;
+}
+
+.forgot {
+  text-align: right;
+  cursor: pointer;
+}
+
+/***MEDIA QUERIES***/
+
+@media screen and (min-width: 1200px) {
+  .login-auth-left,
+  .login-auth-right {
+    width: 50%;
+  }
+
+  .login-auth-right {
+    background-image: none;
+  }
+
+  .login-border {
+    border-left: var(--dark-text-regular) 1px solid;
+  }
 }
