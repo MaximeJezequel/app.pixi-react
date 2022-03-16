@@ -1,16 +1,19 @@
 /***Login***/
 .login-auth-left {
-  width: 0%;
+  width: 0;
 }
 
 .login-auth-left img {
-  width: calc(100% - 12px);
-  padding-right: 12px;
+  width: 0;
 }
 
 .login-auth-right {
   width: 100%;
-  background-image: url(../assets/modele.jpg);
+  background-image: url(../assets/modele-dimmed.jpg);
+  background-size: cover;
+  background-position: 50%;
+  background-position-x: 50%;
+  background-position-y: center;
 }
 
 .login {
@@ -56,6 +59,19 @@
   .login-auth-left,
   .login-auth-right {
     width: 50%;
+  }
+
+  .login-auth-left {
+    margin-right: 20px;
+    background-image: url(../assets/modele.jpg);
+    background-size: cover;
+    background-position: 50%;
+  }
+
+  .login-auth-left img {
+    width: 60px;
+    margin: 30px;
+    border-radius: 6px 0 6px 6px;
   }
 
   .login-auth-right {

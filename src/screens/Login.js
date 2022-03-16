@@ -7,7 +7,7 @@ import { Snackbar, Alert } from '@mui/material';
 import '../App.css';
 import '../styles/Login.css';
 
-import image from '../assets/modele.jpg';
+import logo from '../assets/pixiliveicon.jpg';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -45,10 +45,12 @@ const Login = () => {
     <div className="App">
       <div className="bodyContainer flex">
         <div className="login-auth-left">
-          <img src={image} alt="" />
+          <a href="/">
+            <img src={logo} alt="" />
+          </a>
         </div>
         <div className="login-auth-right login-border">
-          <h2>LOGIN</h2>
+          <h2>LOG IN</h2>
           <div className="login flex col">
             {/* <label htmlFor="email">Email</label> */}
             <input type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />

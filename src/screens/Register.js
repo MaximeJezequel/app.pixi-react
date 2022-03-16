@@ -7,7 +7,7 @@ import { Snackbar, Alert } from '@mui/material';
 import '../App.css';
 import '../styles/Login.css';
 
-import image from '../assets/modele.jpg';
+import logo from '../assets/pixiliveicon.jpg';
 
 const Register = () => {
   const [firstName, setFirstName] = useState('');
@@ -31,6 +31,7 @@ const Register = () => {
       .post(`${process.env.REACT_APP_URL_API}/users`, registerData)
       .then((results) => {
         console.log(results);
+        // redirect to login page in case of success
         window.location = '/login';
       })
       .catch((err) => {
@@ -48,7 +49,9 @@ const Register = () => {
     <div className="App">
       <div className="bodyContainer flex">
         <div className="login-auth-left">
-          <img src={image} alt="" />
+          <a href="/">
+            <img src={logo} alt="" />
+          </a>
         </div>
         <div className="login-auth-right login-border">
           <h2>REGISTER</h2>
