@@ -22,9 +22,10 @@
 
 .login input {
   cursor: inherit;
-  width: calc(100% - 20px);
+  width: calc(100% - 44px);
   height: 26px;
   padding: 10px;
+  margin: 0 12px;
   background-color: var(--dark-blue-color);
   border: 1px solid var(--dark-grey-color);
   color: var(--dark-text-regular);
@@ -36,21 +37,22 @@
 .registerBtn {
   width: 45%;
   padding: 10px;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin: 12px 0;
   background-color: var(--red-color);
   color: var(--dark-text-regular);
   border: transparent 1px solid;
   border-radius: 6px;
 }
 
-.loginBtn:hover {
+.loginBtn:hover,
+.registerBtn:hover {
   cursor: pointer;
 }
 
 .forgot {
   text-align: right;
   cursor: pointer;
+  margin: 0 12px;
 }
 
 /***MEDIA QUERIES***/
