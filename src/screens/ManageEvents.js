@@ -31,6 +31,14 @@ function ManageEvents() {
 
   let max1 = 100; //maximum watermark size in percent
   let max2 = 10; //maximum distance between watermark and edge in percent
+  const watermarkPos = {
+    x: parseInt(bubbleGridWatermark[0]),
+    y: parseInt(bubbleGridWatermark[2]),
+  };
+  const creditPos = {
+    x: parseInt(bubbleGridCopyright[0]),
+    y: parseInt(bubbleGridCopyright[2]),
+  };
 
   const inputFile = useRef(null);
 
@@ -48,16 +56,16 @@ function ManageEvents() {
     const newEvent = new FormData();
 
     newEvent.append('eventName', eventName);
-    newEvent.append('watermark', watermarkFile);
+    // newEvent.append('watermark', watermarkFile);
 
-    newEvent.append('eventWatermarkSize', slider1);
-    newEvent.append('eventWatermarkBord', slider2);
-    newEvent.append('eventWatermarkPos', bubbleGridWatermark);
+    newEvent.append('watermarkSize', slider1);
+    newEvent.append('watermarkBord', slider2);
+    newEvent.append('watermarkPos', watermarkPos);
 
-    newEvent.append('eventCredit', showCopyright);
-    newEvent.append('eventCreditPos', bubbleGridCopyright);
-    newEvent.append('eventCreditFont', fontFamily);
-    newEvent.append('eventCreditSize', fontSize);
+    newEvent.append('credit', showCopyright);
+    newEvent.append('creditPos', creditPos);
+    newEvent.append('creditFont', fontFamily);
+    // newEvent.append('eventCreditSize', fontSize);
 
     // newEvent.append('corrections', this.isCorrection);
     // newEvent.append('eventFtpHost', document.getElementById('hostInput').value);
@@ -67,13 +75,20 @@ function ManageEvents() {
 
     console.log('newEvent : ', newEvent);
     console.log(
+      'eventName :',
       eventName,
-      watermarkFile.size,
+      'watermarkSize: ',
       slider1,
+      'watermarkBord: ',
       slider2,
-      bubbleGridWatermark,
+      'watermarkPos: ',
+      watermarkPos,
+      '***',
+      'credit: ',
       showCopyright,
-      bubbleGridCopyright,
+      'creditPos',
+      creditPos,
+      'creditFont: ',
       fontFamily,
       fontSize,
       tags,
