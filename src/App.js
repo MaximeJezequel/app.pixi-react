@@ -12,18 +12,26 @@ import Upload from './screens/Upload';
 import './App.css';
 
 function App() {
+  let isLogged = JSON.parse(localStorage.getItem('login')) === 1 ? true : false;
+
   return (
     <Router>
-      <NavBar />
-      <Routes>
-        <Route exact path="/" element={<DashBoard />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/events" element={<ManageEvents />} />
-        <Route path="/team" element={<ManageTeam />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+      <div className="App">
+        <NavBar />
+
+        {!isLogged && <Login />}
+        {isLogged && (
+          <Routes>
+            <Route path="/" element={<DashBoard />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/events" element={<ManageEvents />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/team" element={<ManageTeam />} />
+            <Route path="/upload" element={<Upload />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        )}
+      </div>
     </Router>
   );
 }

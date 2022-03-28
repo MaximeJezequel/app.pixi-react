@@ -27,6 +27,8 @@ const Login = () => {
       .then((results) => {
         // stocker jwt response in local storage
         localStorage.setItem('sessionToken', results.data.jwt);
+        // set Login status
+        localStorage.setItem('login', 1);
         // redirect to dashboard "/"
         window.location = '/';
       })
@@ -56,7 +58,7 @@ const Login = () => {
             <input type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
             {/* <label htmlFor="password">Password</label> */}
             <input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
-            <Link to="" class="forgot">
+            <Link to="" className="forgot">
               Forgot password?
             </Link>
             <div className="button flex col aic jcc">

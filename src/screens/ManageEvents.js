@@ -22,6 +22,12 @@ function ManageEvents() {
   const [slider2, setSlider2] = useState(0); //percent
   const [bubbleGridCopyright, setBubbleGridCopyright] = useState('3-1'); //initial position of copyright
   const [showCopyright, setShowCopyright] = useState(true);
+  const [fontFamily, setFontFamily] = useState('roboto');
+  const [fontSize, setFontSize] = useState(14);
+  const [tags, setTags] = useState(['Main stage', 'Partners', 'Backstages', 'Folder 4']);
+  const [autoExpo, setAutoExpo] = useState(true);
+  const [autoWhite, setAutoWhite] = useState(false);
+  const [autoNoise, setAutoNoise] = useState(true);
 
   let max1 = 100; //maximum watermark size in percent
   let max2 = 10; //maximum distance between watermark and edge in percent
@@ -39,43 +45,43 @@ function ManageEvents() {
   };
 
   const addEvent = () => {
-    const newEventOld = {
-      eventName: eventName,
-      watermarkFile: watermarkFile,
-    };
-
     const newEvent = new FormData();
-    let watermarkPos = undefined;
-    this.isFolder = this.folders.length > 0 ? true : false;
-    for (let i = 0; i < document.getElementById('watermarkPos').getElementsByTagName('input').length; i++) {
-      if (document.getElementById('watermarkPos').getElementsByTagName('input')[i].checked === true) {
-        watermarkPos = document.getElementById('watermarkPos').getElementsByTagName('input')[i].value;
-      }
-    }
-    newEvent.append('eventName', eventName);
-    newEvent.append(
-      'watermark',
-      document.getElementById('eventWatermarkFile').files[0] !== undefined
-        ? document.getElementById('eventWatermarkFile').files[0]
-        : undefined
-    );
-    newEvent.append('eventWatermarkSize', document.getElementById('watermarkSize').value);
-    newEvent.append('eventWatermarkBord', document.getElementById('watermarkBord').value);
-    newEvent.append('eventWatermarkPos', watermarkPos);
-    newEvent.append('eventCredit', this.isCredit);
-    newEvent.append('eventCreditPos', this.creditPosition);
-    newEvent.append('eventCreditFont', document.getElementById('font-selector').value);
-    newEvent.append('eventCreditSize', document.getElementById('fontsize-selector').value);
-    // newEvent.append('isFolder', this.isFolder);
-    // newEvent.append('folders', this.isFolder ? this.folders : undefined);
-    newEvent.append('corrections', this.isCorrection);
 
-    newEvent.append('eventFtpHost', document.getElementById('hostInput').value);
-    newEvent.append('eventFtpUser', document.getElementById('userFTPInput').value);
-    newEvent.append('eventFtpPort', document.getElementById('portInput').value);
-    newEvent.append('eventFtpPassword', document.getElementById('passFTPInput').value);
+    newEvent.append('eventName', eventName);
+    newEvent.append('watermark', watermarkFile);
+
+    newEvent.append('eventWatermarkSize', slider1);
+    newEvent.append('eventWatermarkBord', slider2);
+    newEvent.append('eventWatermarkPos', bubbleGridWatermark);
+
+    newEvent.append('eventCredit', showCopyright);
+    newEvent.append('eventCreditPos', bubbleGridCopyright);
+    newEvent.append('eventCreditFont', fontFamily);
+    newEvent.append('eventCreditSize', fontSize);
+
+    // newEvent.append('corrections', this.isCorrection);
+    // newEvent.append('eventFtpHost', document.getElementById('hostInput').value);
+    // newEvent.append('eventFtpUser', document.getElementById('userFTPInput').value);
+    // newEvent.append('eventFtpPort', document.getElementById('portInput').value);
+    // newEvent.append('eventFtpPassword', document.getElementById('passFTPInput').value);
 
     console.log('newEvent : ', newEvent);
+    console.log(
+      eventName,
+      watermarkFile.size,
+      slider1,
+      slider2,
+      bubbleGridWatermark,
+      showCopyright,
+      bubbleGridCopyright,
+      fontFamily,
+      fontSize,
+      tags,
+      autoExpo,
+      autoWhite,
+      autoNoise
+    );
+
     axios.post(`${process.env.REACT_APP_URL_API}/events`, newEvent, {
       headers: {
         Authorization: `Basic ${localStorage.getItem('sessionToken')}`,
@@ -125,9 +131,20 @@ function ManageEvents() {
             setToggle={setShowCopyright}
             bubbleValue={bubbleGridCopyright}
             setBubbleValue={setBubbleGridCopyright}
+            fontFamily={fontFamily}
+            fontSize={fontSize}
+            setFontFamily={setFontFamily}
+            setFontSize={setFontSize}
           />
-          <OptionBlock2 />
-          <OptionBlock3 />
+          <OptionBlock2 tags={tags} setTags={setTags} />
+          <OptionBlock3
+            autoExpo={autoExpo}
+            setAutoExpo={setAutoExpo}
+            autoWhite={autoWhite}
+            setAutoWhite={setAutoWhite}
+            autoNoise={autoNoise}
+            setAutoNoise={setAutoNoise}
+          />
           <OptionBlock4 />
           <OptionBlock5 />
         </div>
