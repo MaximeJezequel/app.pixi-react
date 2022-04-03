@@ -1,100 +1,105 @@
 /***watermark***/
 
 .watermarkContainer {
-	width: 100%;
+  width: 100%;
 }
 
 .uploadContainer {
-	padding-top: 12px;
+  padding-top: 12px;
 }
 
 .importFileContainer {
-	margin-bottom: 15px;
-	border: 1px solid var(--dark-grey-color);
-	background-color: var(--dark-blue-color);
-	color: white;
-	border-radius: 0.5em;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border: 1px solid var(--dark-grey-color);
+  background-color: var(--dark-blue-color);
+  color: white;
+  border-radius: 0.5em;
 }
 
 .importedFileName {
-	padding: 10px;
-	background-color: var(--dark-blue-color);
-	color: white;
-	border-radius: 0.5em;
-	border: none;
-	outline: none;
-	width: 90%;
+  padding: 10px;
+  background-color: var(--dark-blue-color);
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+  width: 90%;
 }
 .importedFileName:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .importFileBtn {
-	padding: 10px 20px;
-	background-color: var(--red-color);
-	color: white;
-	border-radius: 0 0.5em 0.5em 0;
-	border: none;
-	width: max(100px, 10%);
+  padding: 10px 20px;
+  background-color: var(--red-color);
+  color: white;
+  border-radius: 0 0.5em 0.5em 0;
+  border: none;
+  width: max(100px, 10%);
 }
 .importFileBtn:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .watermarkPosition {
-	width: 100%;
+  width: 100%;
 }
 
 .position {
-	width: max(300px, 30%);
+  width: max(300px, 30%);
 }
 
 .watermarkSliders {
-	width: 70%;
+  width: 100%;
 }
 
 .sliderTitle {
-	width: 100%;
+  width: 100%;
+  margin-bottom: 6px;
 }
 
 .sliderContainer {
-	padding: 0 8px;
-	position: relative;
+  padding: 0 8px;
+  margin-bottom: 14px;
 }
 
 .sliderLabel {
-	width: 80%;
-	padding: 18px 0 6px 0;
+  width: 80%;
 }
 
 .sliderRange {
-	width: 100%;
-	margin: 0;
-	margin-top: 0px;
-	padding: 0;
+  width: 100%;
+  margin: 0;
+  margin-top: 0px;
+  padding: 0;
 }
 
 .boxSize {
-	width: 30px;
-	height: 25px;
-	text-align: center;
-	font-size: 14px;
-	border: 1px solid var(--dark-grey-color);
-	background-color: var(--dark-grey-color);
-	color: white;
-	border-radius: 3px;
+  width: 30px;
+  height: 25px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid var(--dark-grey-color);
+  background-color: var(--dark-grey-color);
+  color: white;
+  border-radius: 3px;
 }
 
 .boxSize:hover {
-	cursor: pointer;
+  cursor: pointer;
+}
+
+.gridContainer {
+  margin: 12px 0;
 }
 
 @media screen and (max-width: 1200px) {
-	.watermarkPosition {
-		flex-direction: column;
-	}
+  .watermarkPosition {
+    flex-direction: column;
+  }
 
-	.watermarkSliders {
-		width: 100%;
-	}
+  .watermarkSliders {
+    width: 100%;
+  }
 }

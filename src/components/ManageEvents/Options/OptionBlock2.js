@@ -93,8 +93,10 @@ const OptionBlock2 = ({ tags, setTags }) => {
             .map((tag, index) => (
               <div key={index} className="tagList flex row aic jcsb">
                 <div className="flex row">
-                  <div className="tagBlock">=</div>
-                  <div className="tagBlock">{tag}</div>
+                  <div className="tagBlock">
+                    <Icon.Folder size={14} />
+                  </div>
+                  <div className="tagBlock test">{tag}</div>
                 </div>
                 <div className="flex row">
                   <div className="tagBlock" onClick={() => handleOpenEdit(tag)}>

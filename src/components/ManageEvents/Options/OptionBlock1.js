@@ -12,6 +12,8 @@ const OptionBlock1 = ({
   setFontFamily,
   fontSize,
   setFontSize,
+  creditText,
+  setCreditText,
 }) => {
   let fonts = [
     { name: 'Roboto', css: 'roboto' },
@@ -41,14 +43,16 @@ const OptionBlock1 = ({
         <ToggleParam text="Show copyright" toggle={toggle} setToggle={setToggle} />
         <div className="positionContainer flex row">
           <div className="position">
-            <p>Position</p>
-            <BubbleGrid bubbleValue={bubbleValue} setBubbleValue={setBubbleValue} />
+            <label>Position</label>
+            <div className="gridContainer">
+              <BubbleGrid bubbleValue={bubbleValue} setBubbleValue={setBubbleValue} />
+            </div>
           </div>
 
           <div className="copyright flex col">
             <div className="font flex row jcsb">
               <div className="fontName">
-                <p>Font</p>
+                <label>Font</label>
                 <select className="fontSelect" value={fontFamily} onChange={(e) => handleChangeFontFamily(e)}>
                   {fonts.map((font, index) => (
                     <option key={index} value={font.css}>
@@ -59,7 +63,7 @@ const OptionBlock1 = ({
               </div>
 
               <div className="fontSize">
-                <p>Size</p>
+                <label>Size</label>
                 <select className="fontSelect" value={fontSize} onChange={(e) => handleChangeFontSize(e)}>
                   {fontSizes.map((fontSize, index) => (
                     <option key={index} value={fontSize}>
@@ -70,8 +74,10 @@ const OptionBlock1 = ({
               </div>
             </div>
             <div className="credit">
-              <p>Credit</p>
+              <label>Credit</label>
               <input
+                value={creditText}
+                onChange={(e) => setCreditText(e.target.value)}
                 className={`${fontFamily}`}
                 style={{ fontSize: `${fontSize}px` }}
                 type="text"

@@ -24,6 +24,7 @@ function ManageEvents() {
   const [showCopyright, setShowCopyright] = useState(true);
   const [fontFamily, setFontFamily] = useState('roboto');
   const [fontSize, setFontSize] = useState(14);
+  const [creditText, setCreditText] = useState('');
   const [tags, setTags] = useState(['Main stage', 'Partners', 'Backstages', 'Folder 4']);
   const [autoExpo, setAutoExpo] = useState(true);
   const [autoWhite, setAutoWhite] = useState(false);
@@ -48,24 +49,22 @@ function ManageEvents() {
   };
 
   const handleWatermarkChange = (e) => {
-    console.log('watermark', e.target.value);
-    setWatermarkFile(e.target.value);
+    console.log('watermark', e.target.files[0]);
+    setWatermarkFile(e.target.files[0]);
   };
 
   const addEvent = () => {
     const newEvent = new FormData();
-
     newEvent.append('eventName', eventName);
-    // newEvent.append('watermark', watermarkFile);
-
+    newEvent.append('watermark', watermarkFile);
     newEvent.append('watermarkSize', slider1);
     newEvent.append('watermarkBord', slider2);
-    newEvent.append('watermarkPos', watermarkPos);
-
+    newEvent.append('watermarkPos', JSON.stringify(watermarkPos));
     newEvent.append('credit', showCopyright);
-    newEvent.append('creditPos', creditPos);
+    newEvent.append('creditPos', JSON.stringify(creditPos));
     newEvent.append('creditFont', fontFamily);
-    // newEvent.append('eventCreditSize', fontSize);
+    newEvent.append('creditSize', fontSize);
+    newEvent.append('creditText', creditText);
 
     // newEvent.append('corrections', this.isCorrection);
     // newEvent.append('eventFtpHost', document.getElementById('hostInput').value);
@@ -73,29 +72,10 @@ function ManageEvents() {
     // newEvent.append('eventFtpPort', document.getElementById('portInput').value);
     // newEvent.append('eventFtpPassword', document.getElementById('passFTPInput').value);
 
-    console.log('newEvent : ', newEvent);
-    console.log(
-      'eventName :',
-      eventName,
-      'watermarkSize: ',
-      slider1,
-      'watermarkBord: ',
-      slider2,
-      'watermarkPos: ',
-      watermarkPos,
-      '***',
-      'credit: ',
-      showCopyright,
-      'creditPos',
-      creditPos,
-      'creditFont: ',
-      fontFamily,
-      fontSize,
-      tags,
-      autoExpo,
-      autoWhite,
-      autoNoise
-    );
+    console.log('watermarkFile', watermarkFile);
+    for (let value of newEvent.values()) {
+      console.log(value);
+    }
 
     axios.post(`${process.env.REACT_APP_URL_API}/events`, newEvent, {
       headers: {
@@ -150,6 +130,8 @@ function ManageEvents() {
             fontSize={fontSize}
             setFontFamily={setFontFamily}
             setFontSize={setFontSize}
+            creditText={creditText}
+            setCreditText={setCreditText}
           />
           <OptionBlock2 tags={tags} setTags={setTags} />
           <OptionBlock3

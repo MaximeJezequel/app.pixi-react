@@ -46,13 +46,13 @@ const Watermark = ({
 
   return (
     <div>
-      <label htmlFor="Watermark">Watermark</label>
+      <label className="watermark">Watermark</label>
 
       <div className="importFileContainer flex row jcsb">
         <input
           className="importedFileName"
           placeholder="Choose file"
-          value={watermarkFile}
+          value={watermarkFile.name}
           onClick={handleUploadClick}
         />
         <input
@@ -72,13 +72,15 @@ const Watermark = ({
       <div className="watermarkContainer">
         <div className="watermarkPosition flex row jcsb">
           <div className="position">
-            <p>Position</p>
-            <BubbleGrid bubbleValue={bubbleValue} setBubbleValue={setBubbleValue} />
+            <label>Position</label>
+            <div className="gridContainer">
+              <BubbleGrid bubbleValue={bubbleValue} setBubbleValue={setBubbleValue} />
+            </div>
           </div>
 
           <div className="watermarkSliders flex col">
             <div className="slider1 flex col">
-              <div className="sliderTitle flex row aic jcsb">
+              <div className="sliderTitle flex row jcsb">
                 <div className="sliderLabel">Size of the watermark (%)</div>
                 <input className="boxSize" value={slider1} onChange={(e) => handleChange1(e.target.value)} />
               </div>
@@ -95,13 +97,9 @@ const Watermark = ({
               </div>
 
               <div className="slider2 flex col">
-                <div className="sliderTitle flex row aic jcsb">
+                <div className="sliderTitle flex row jcsb">
                   <div className="sliderLabel">Distance from the edge of the photo (%)</div>
-                  <input
-                    className="boxSize flex aic jcc"
-                    value={slider2}
-                    onChange={(e) => handleChange2(e.target.value)}
-                  />
+                  <input className="boxSize" value={slider2} onChange={(e) => handleChange2(e.target.value)} />
                 </div>
                 <div className="sliderContainer">
                   <Slider

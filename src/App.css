@@ -36,6 +36,7 @@ a {
 
 /***bodyContainer***/
 .bodyContainer {
+  font-size: 14px;
   position: relative;
   min-height: 100vh;
   height: 100%;
@@ -117,7 +118,6 @@ h2 {
   padding-top: 100px;
   background-color: aqua;
   color: red;
-
   height: 50px;
 }
 
