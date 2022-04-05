@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import DashBoard from './screens/Dashboard';
+import Dashboard from './screens/Dashboard';
 import Gallery from './screens/Gallery';
 import Login from './screens/Login';
 import ManageEvents from './screens/ManageEvents';
+import NewEvent from './screens/NewEvent';
 import ManageTeam from './screens/ManageTeam';
 import NavBar from './screens/NavBar';
 import Register from './screens/Register';
@@ -22,12 +23,13 @@ function App() {
         {!isLogged && <Login />}
         {isLogged && (
           <Routes>
-            <Route path="/" element={<DashBoard />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/events" element={<ManageEvents />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/gallery/:event_id" element={<Gallery />} />
+            <Route path="/upload/:event_id" element={<Upload />} />
+            <Route path="/events/:event_id" element={<ManageEvents />} />
+            <Route path="/events" element={<NewEvent />} />
+            <Route path="/team/" element={<ManageTeam />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/team" element={<ManageTeam />} />
-            <Route path="/upload" element={<Upload />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         )}

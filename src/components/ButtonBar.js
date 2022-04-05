@@ -1,27 +1,24 @@
-import * as Icon from "react-feather"
+import * as Icon from 'react-feather';
 
-import "./ButtonBar.css"
+import './ButtonBar.css';
 
-const ButtonBar = ({ handleClickSave }) => {
-	return (
-		<div className="buttonBar flex">
-			<button className="deleteBtn flex aic jcc">
-				<Icon.Trash2 size={14} />
-				<div className="flex aic jcc">
-					<span>Delete</span>
-				</div>
-			</button>
-			<button className="cancelBtn flex aic jcc">
-				<Icon.X size={14} /> <span>Cancel</span>
-			</button>
-			<button
-				className="saveBtn flex aic jcc"
-				onClick={() => handleClickSave()}
-			>
-				<Icon.Save size={14} /> <span>Save</span>
-			</button>
-		</div>
-	)
-}
+const ButtonBar = ({ handleClickSave, handleClickDelete }) => {
+  return (
+    <div className="buttonBar flex">
+      <button className="deleteBtn flex aic jcc" onClick={() => handleClickDelete()}>
+        <Icon.Trash2 size={14} />
+        <div className="flex aic jcc">
+          <span>Delete</span>
+        </div>
+      </button>
+      <button className="cancelBtn flex aic jcc">
+        <Icon.X size={14} /> <span>Cancel</span>
+      </button>
+      <button className="saveBtn flex aic jcc" onClick={() => handleClickSave()}>
+        <Icon.Save size={14} /> <span>Save</span>
+      </button>
+    </div>
+  );
+};
 
-export default ButtonBar
+export default ButtonBar;
